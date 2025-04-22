@@ -47,9 +47,9 @@ public class TodoItems : EndpointGroupBase
     public async Task<Results<NoContent, BadRequest>> UpdateTodoItemDetail(ISender sender, int id, UpdateTodoItemDetailCommand command)
     {
         if (id != command.Id) return TypedResults.BadRequest();
-        
+
         await sender.Send(command);
-        
+
         return TypedResults.NoContent();
     }
 

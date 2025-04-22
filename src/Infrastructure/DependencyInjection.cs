@@ -32,6 +32,9 @@ public static class DependencyInjection
             options.UseSqlServer(connectionString).AddAsyncSeeding(sp);
 #endif
         });
+        // Add DapperService
+        builder.Services.AddScoped<IDapperService>(provider =>
+            new DapperService(connectionString));
 
 #if (UseAspire)
 #if (UsePostgreSQL)
