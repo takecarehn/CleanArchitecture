@@ -23,6 +23,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();
 
+// Add cache service
+builder.Services.AddMemoryCache();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
