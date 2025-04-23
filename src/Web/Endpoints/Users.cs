@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using CleanArchitecture.Application.Common.Models;
 
 namespace CleanArchitecture.Web.Endpoints;
 
@@ -8,7 +9,7 @@ public class Users : EndpointGroupBase
     public override void Map(WebApplication app)
     {
         var group = app.MapGroup("/api/users");
-
+        group.RequireAuthorization();
         group.MapGet("/{userId}/username", GetUserNameAsync);
         group.MapPost("/create", CreateUserAsync);
         group.MapGet("/{userId}/role/{role}", IsInRoleAsync);
@@ -16,46 +17,46 @@ public class Users : EndpointGroupBase
         group.MapDelete("/{userId}", DeleteUserAsync);
     }
 
-    private static async Task<IResult> GetUserNameAsync(
+    private static async Task<Result> GetUserNameAsync(
         [FromServices] IIdentityService identityService,
         string userId)
     {
         var userName = await identityService.GetUserNameAsync(userId);
-        return userName != null ? Results.Ok(userName) : Results.NotFound("User not found");
+        return userName != null ? Result.Success(userName) : Result.Failure("User not found");
     }
 
-    private static async Task<IResult> CreateUserAsync(
+    private static async Task<Result> CreateUserAsync(
         [FromServices] IIdentityService identityService,
         [FromBody] CreateUserRequest request)
     {
         var (result, userId) = await identityService.CreateUserAsync(request.UserName, request.Password);
-        return result.Succeeded ? Results.Ok(new { UserId = userId }) : Results.BadRequest(result.Errors);
+        return result.Succeeded ? Result.Success(new { UserId = userId }) : Result.Failure(result.Errors);
     }
 
-    private static async Task<IResult> IsInRoleAsync(
+    private static async Task<Result> IsInRoleAsync(
         [FromServices] IIdentityService identityService,
         string userId,
         string role)
     {
         var isInRole = await identityService.IsInRoleAsync(userId, role);
-        return Results.Ok(new { IsInRole = isInRole });
+        return Result.Success(new { IsInRole = isInRole });
     }
 
-    private static async Task<IResult> AuthorizeAsync(
+    private static async Task<Result> AuthorizeAsync(
         [FromServices] IIdentityService identityService,
         string userId,
         string policyName)
     {
         var isAuthorized = await identityService.AuthorizeAsync(userId, policyName);
-        return Results.Ok(new { IsAuthorized = isAuthorized });
+        return Result.Success(new { IsAuthorized = isAuthorized });
     }
 
-    private static async Task<IResult> DeleteUserAsync(
+    private static async Task<Result> DeleteUserAsync(
         [FromServices] IIdentityService identityService,
         string userId)
     {
         var result = await identityService.DeleteUserAsync(userId);
-        return result.Succeeded ? Results.Ok("User deleted successfully") : Results.BadRequest(result.Errors);
+        return result.Succeeded ? Result.Success("User deleted successfully") : Result.Failure(result.Errors);
     }
 }
 
