@@ -110,9 +110,9 @@
         }
       }
     },
-    "/api/users/{userId}/username": {
+    "/api/users/{userId}/user-name": {
       "get": {
-        "operationId": "GetApiUsersUsername",
+        "operationId": "GetApiUsersUserName",
         "parameters": [
           {
             "name": "userId",

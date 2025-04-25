@@ -1,20 +1,23 @@
 ﻿using CleanArchitecture.Application.Common.Interfaces;
-using Microsoft.AspNetCore.Mvc;
 using CleanArchitecture.Application.Common.Models;
-
+using CleanArchitecture.Application.Common.Security;
+using CleanArchitecture.Domain.Constants;
+using CleanArchitecture.Infrastructure.Authorization;
+using Microsoft.AspNetCore.Mvc;
 namespace CleanArchitecture.Web.Endpoints;
 
+[Authorize]
 public class Users : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
         var group = app.MapGroup("/api/users");
-        group.RequireAuthorization();
-        group.MapGet("/{userId}/username", GetUserNameAsync);
+        group.MapGet("/{userId:guid}/user-name", GetUserNameAsync)
+             .RequirePermission(ClaimValues.PermissionUserGetUserName);
         group.MapPost("/create", CreateUserAsync);
-        group.MapGet("/{userId}/role/{role}", IsInRoleAsync);
-        group.MapPost("/{userId}/authorize/{policyName}", AuthorizeAsync);
-        group.MapDelete("/{userId}", DeleteUserAsync);
+        group.MapGet("/{userId:guid}/role/{role}", IsInRoleAsync);
+        group.MapPost("/{userId:guid}/authorize/{policyName}", AuthorizeAsync);
+        group.MapDelete("/{userId:guid}", DeleteUserAsync);
     }
 
     private static async Task<Result> GetUserNameAsync(

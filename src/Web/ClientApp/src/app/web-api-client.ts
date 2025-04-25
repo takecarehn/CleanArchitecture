@@ -20,7 +20,7 @@ export interface IClient {
     postApiAuthLogout(): Observable<Result>;
     postApiAuthChangePassword(request: ChangePasswordRequest): Observable<Result>;
     postApiAuthResetPassword(request: ResetPasswordRequest): Observable<Result>;
-    getApiUsersUsername(userId: string): Observable<Result>;
+    getApiUsersUserName(userId: string): Observable<Result>;
     postApiUsersCreate(request: CreateUserRequest): Observable<Result>;
     getApiUsersRole(userId: string, role: string): Observable<Result>;
     postApiUsersAuthorize(userId: string, policyName: string): Observable<Result>;
@@ -244,8 +244,8 @@ export class Client implements IClient {
         return _observableOf(null as any);
     }
 
-    getApiUsersUsername(userId: string): Observable<Result> {
-        let url_ = this.baseUrl + "/api/users/{userId}/username";
+    getApiUsersUserName(userId: string): Observable<Result> {
+        let url_ = this.baseUrl + "/api/users/{userId}/user-name";
         if (userId === undefined || userId === null)
             throw new Error("The parameter 'userId' must be defined.");
         url_ = url_.replace("{userId}", encodeURIComponent("" + userId));
@@ -260,11 +260,11 @@ export class Client implements IClient {
         };
 
         return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
-            return this.processGetApiUsersUsername(response_);
+            return this.processGetApiUsersUserName(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGetApiUsersUsername(response_ as any);
+                    return this.processGetApiUsersUserName(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<Result>;
                 }
@@ -273,7 +273,7 @@ export class Client implements IClient {
         }));
     }
 
-    protected processGetApiUsersUsername(response: HttpResponseBase): Observable<Result> {
+    protected processGetApiUsersUserName(response: HttpResponseBase): Observable<Result> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :

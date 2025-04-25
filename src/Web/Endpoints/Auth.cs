@@ -1,12 +1,12 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using CleanArchitecture.Application.Common.Models;
 using CleanArchitecture.Infrastructure.Identity;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using CleanArchitecture.Application.Common.Models;
-using Microsoft.AspNetCore.Authentication;
 
 namespace CleanArchitecture.Web.Endpoints;
 
@@ -23,9 +23,10 @@ public class Auth : EndpointGroupBase
     }
 
     private static async Task<Result> LoginAsync(
-        [FromServices] UserManager<ApplicationUser> userManager,
-        [FromServices] IConfiguration configuration,
-        [FromBody] LoginRequest request)
+       [FromServices] UserManager<ApplicationUser> userManager,
+       [FromServices] RoleManager<IdentityRole> roleManager,
+       [FromServices] IConfiguration configuration,
+       [FromBody] LoginRequest request)
     {
         var user = await userManager.FindByNameAsync(request.Username);
         if (user == null || !await userManager.CheckPasswordAsync(user, request.Password))
@@ -33,25 +34,29 @@ public class Auth : EndpointGroupBase
             return Result.Failure("Invalid username or password.");
         }
 
-        // create JWT token
-        var token = GenerateJwtToken(user, configuration);
+        var token = GenerateJwtToken(user, configuration, userManager, roleManager);
 
         return Result.Success(new { User = user, Token = token });
     }
 
-    private static string GenerateJwtToken(ApplicationUser user, IConfiguration configuration)
+    private static string GenerateJwtToken(
+                                            ApplicationUser user,
+                                            IConfiguration configuration,
+                                            UserManager<ApplicationUser> userManager,
+                                            RoleManager<IdentityRole> roleManager)
     {
-        var claims = new[]
-        {
-            new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
-            new Claim(ClaimTypes.NameIdentifier, user.Id ?? string.Empty),
-            new Claim(ClaimTypes.Email, user.Email ?? string.Empty)
-        };
+        // Các claim cơ bản định danh người dùng
+        var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.Name, user.UserName ?? string.Empty),
+        new Claim(ClaimTypes.NameIdentifier, user.Id ?? string.Empty),
+        new Claim(ClaimTypes.Email, user.Email ?? string.Empty),
+    };
 
         var jwtKey = configuration["Jwt:Key"];
         if (string.IsNullOrEmpty(jwtKey))
         {
-            throw new InvalidOperationException("JWT Key is not configured.");
+            throw new InvalidOperationException("JWT key is not configured.");
         }
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
@@ -61,7 +66,7 @@ public class Auth : EndpointGroupBase
             issuer: configuration["Jwt:Issuer"],
             audience: configuration["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.Now.AddHours(1),
+            expires: DateTime.UtcNow.AddHours(1),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -97,7 +102,7 @@ public class Auth : EndpointGroupBase
     {
         // Tìm user theo UserId
         var user = await userManager.FindByIdAsync(request.UserId);
-        if (user == null) 
+        if (user == null)
             return Result.Failure("User not found");
 
         // Tạo token reset password
@@ -107,8 +112,8 @@ public class Auth : EndpointGroupBase
         var result = await userManager.ResetPasswordAsync(user, resetToken, request.NewPassword);
 
         // Trả về kết quả
-        return result.Succeeded 
-            ? Result.Success() 
+        return result.Succeeded
+            ? Result.Success()
             : Result.Failure(result.Errors.Select(e => e.Description));
     }
 }
