@@ -34,7 +34,7 @@
       <div class="clearfix">
         <h2 class="float-start">{{ selectedList.title }}</h2>
         <button id="listOptions" class="btn btn-default float-end" title="List Options..."
-          (click)="showListOptionsModal(listOptionsModalTemplate)">
+                (click)="showListOptionsModal(listOptionsModalTemplate)">
           <i class="bi bi-three-dots-vertical"></i>
         </button>
       </div>
@@ -48,12 +48,12 @@
             <div class="flex-fill">
               @if(item == selectedItem){
               <input id="{{ 'itemTitle' + i }}" type="text" class="form-control item-input-control"
-                [(ngModel)]="item.title" (keyup.enter)="updateItem(item, true)" (blur)="updateItem(item)"
-                autofocus="autofocus" maxlength="200" />
+                     [(ngModel)]="item.title" (keyup.enter)="updateItem(item, true)" (blur)="updateItem(item)"
+                     autofocus="autofocus" maxlength="200" />
               }
               @else {
               <div class="todo-item-title" [ngClass]="{ 'done-todo': item.done }"
-                (click)="editItem(item, 'itemTitle' + i)" class="form-control item-input-control">
+                   (click)="editItem(item, 'itemTitle' + i)" class="form-control item-input-control">
                 <span>{{ item.title }}</span>
               </div>
               }
@@ -61,7 +61,7 @@
             <div class="todo-item-commands">
               @if(item.id != 0){
               <button (click)="showItemDetailsModal(itemDetailsModalTemplate, item)" class="btn btn-default btn-xs"
-                role="button">
+                      role="button">
                 <i class="bi bi-three-dots-vertical"></i>
               </button>
               }
@@ -95,7 +95,7 @@
     <div class="form-group">
       <label for="inputListTitle">Title</label>
       <input type="text" class="form-control" id="inputListTitle" placeholder="List name..."
-        [(ngModel)]="listOptionsEditor.title" (keyup.enter)="updateListOptions()" maxlength="200" />
+             [(ngModel)]="listOptionsEditor.title" (keyup.enter)="updateListOptions()" maxlength="200" />
     </div>
     @if(debug){
     <div>
@@ -200,7 +200,7 @@
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" id="title" placeholder="List title..." [(ngModel)]="newListEditor.title"
-        [ngClass]="{ 'is-invalid': newListEditor.error }" (keyup.enter)="addList()" maxlength="200" />
+             [ngClass]="{ 'is-invalid': newListEditor.error }" (keyup.enter)="addList()" maxlength="200" />
       @if(newListEditor.error){
       <div class="invalid-feedback">
         {{ newListEditor.error }}

@@ -1,13 +1,11 @@
-<script setup>
-import {
+<script setup>import {
   CChartLineExample,
   CChartBarExample,
   CChartDoughnutExample,
   CChartRadarExample,
   CChartPieExample,
   CChartPolarAreaExample,
-} from './index.js'
-</script>
+} from './index.js'</script>
 
 <template>
   <CRow>

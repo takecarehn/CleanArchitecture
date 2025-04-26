@@ -4,6 +4,7 @@ using CleanArchitecture.Application.Common.Security;
 using CleanArchitecture.Domain.Constants;
 using CleanArchitecture.Infrastructure.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
 namespace CleanArchitecture.Web.Endpoints;
 
 [Authorize]
@@ -14,10 +15,16 @@ public class Users : EndpointGroupBase
         var group = app.MapGroup("/api/users");
         group.MapGet("/{userId:guid}/user-name", GetUserNameAsync)
              .RequirePermission(ClaimValues.PermissionUserGetUserName);
-        group.MapPost("/create", CreateUserAsync);
-        group.MapGet("/{userId:guid}/role/{role}", IsInRoleAsync);
+        group.MapPost("/create", CreateUserAsync)
+             .RequirePermission(ClaimValues.PermissionUserAdd);
+        group.MapGet("/{userId:guid}/role/{role::guid}", IsInRoleAsync);
         group.MapPost("/{userId:guid}/authorize/{policyName}", AuthorizeAsync);
-        group.MapDelete("/{userId:guid}", DeleteUserAsync);
+        group.MapDelete("/{userId:guid}", DeleteUserAsync)
+             .RequirePermission(ClaimValues.PermissionUserDelete);
+        group.MapPost("/{userId:guid}/lock", LockUserAsync)
+             .RequirePermission(ClaimValues.PermissionUserLock);
+        group.MapPost("/{userId:guid}/unlock", UnlockUserAsync)
+             .RequirePermission(ClaimValues.PermissionUserUnlock);
     }
 
     private static async Task<Result> GetUserNameAsync(
@@ -60,6 +67,20 @@ public class Users : EndpointGroupBase
     {
         var result = await identityService.DeleteUserAsync(userId);
         return result.Succeeded ? Result.Success("User deleted successfully") : Result.Failure(result.Errors);
+    }
+
+    private static async Task<Result> LockUserAsync(
+    [FromServices] IIdentityService identityService,
+    string userId)
+    {
+        return await identityService.LockUserAsync(userId);
+    }
+
+    private static async Task<Result> UnlockUserAsync(
+        [FromServices] IIdentityService identityService,
+        string userId)
+    {
+        return await identityService.UnlockUserAsync(userId);
     }
 }
 

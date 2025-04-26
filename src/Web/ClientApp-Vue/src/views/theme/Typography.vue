@@ -24,9 +24,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h1">h1. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h1">h1. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableDataCell>
@@ -36,9 +34,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h2">h2. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h2">h2. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableDataCell>
@@ -48,9 +44,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h3">h3. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h3">h3. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableDataCell>
@@ -60,9 +54,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h4">h4. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h4">h4. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableDataCell>
@@ -72,9 +64,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h5">h5. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h5">h5. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
               <CTableRow>
                 <CTableDataCell>
@@ -84,9 +74,7 @@
                     </code>
                   </p>
                 </CTableDataCell>
-                <CTableDataCell
-                  ><span class="h6">h6. Bootstrap heading</span></CTableDataCell
-                >
+                <CTableDataCell><span class="h6">h6. Bootstrap heading</span></CTableDataCell>
               </CTableRow>
             </CTableBody>
           </CTable>
@@ -124,24 +112,16 @@
             <CTable>
               <CTableBody>
                 <CTableRow>
-                  <CTableDataCell
-                    ><span class="display-1">Display 1</span></CTableDataCell
-                  >
+                  <CTableDataCell><span class="display-1">Display 1</span></CTableDataCell>
                 </CTableRow>
                 <CTableRow>
-                  <CTableDataCell
-                    ><span class="display-2">Display 2</span></CTableDataCell
-                  >
+                  <CTableDataCell><span class="display-2">Display 2</span></CTableDataCell>
                 </CTableRow>
                 <CTableRow>
-                  <CTableDataCell
-                    ><span class="display-3">Display 3</span></CTableDataCell
-                  >
+                  <CTableDataCell><span class="display-3">Display 3</span></CTableDataCell>
                 </CTableRow>
                 <CTableRow>
-                  <CTableDataCell
-                    ><span class="display-4">Display 4</span></CTableDataCell
-                  >
+                  <CTableDataCell><span class="display-4">Display 4</span></CTableDataCell>
                 </CTableRow>
               </CTableBody>
             </CTable>

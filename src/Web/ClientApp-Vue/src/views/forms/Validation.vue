@@ -1,5 +1,4 @@
-<script setup>
-import { ref } from 'vue'
+<script setup>import { ref } from 'vue'
 const validatedCustom01 = ref(false)
 const validatedDefault01 = ref(false)
 const validatedTooltip01 = ref(false)
@@ -30,10 +29,9 @@ const handleSubmitTooltip01 = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
-  
+
   validatedTooltip01.value = true
-}
-</script>
+}</script>
 
 <template>
   <CRow>
@@ -56,12 +54,10 @@ const handleSubmitTooltip01 = (event) => {
             to better communicate feedback.
           </p>
           <DocsExample href="forms/validation.html">
-            <CForm
-              class="row g-3 needs-validation"
-              novalidate
-              :validated="validatedCustom01"
-              @submit="handleSubmitCustom01"
-            >
+            <CForm class="row g-3 needs-validation"
+                   novalidate
+                   :validated="validatedCustom01"
+                   @submit="handleSubmitCustom01">
               <CCol :md="4">
                 <CFormLabel for="validationCustom01">Email</CFormLabel>
                 <CFormInput id="validationCustom01" value="Mark" required />
@@ -76,12 +72,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormLabel for="validationCustomUsername">Username</CFormLabel>
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend">@</CInputGroupText>
-                  <CFormInput
-                    id="validationCustomUsername"
-                    value=""
-                    aria-describedby="inputGroupPrepend"
-                    required
-                  />
+                  <CFormInput id="validationCustomUsername"
+                              value=""
+                              aria-describedby="inputGroupPrepend"
+                              required />
                   <CFormFeedback invalid> Please choose a username. </CFormFeedback>
                 </CInputGroup>
               </CCol>
@@ -104,12 +98,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormFeedback invalid> Please provide a valid zip. </CFormFeedback>
               </CCol>
               <CCol :xs="12">
-                <CFormCheck
-                  id="invalidCheck"
-                  type="checkbox"
-                  label="Agree to terms and conditions"
-                  required
-                />
+                <CFormCheck id="invalidCheck"
+                            type="checkbox"
+                            label="Agree to terms and conditions"
+                            required />
                 <CFormFeedback invalid> You must agree before submitting. </CFormFeedback>
               </CCol>
               <CCol :xs="12">
@@ -135,11 +127,9 @@ const handleSubmitTooltip01 = (event) => {
             feedback text through JavaScript.
           </p>
           <DocsExample href="forms/validation.html#browser-defaults">
-            <CForm
-              class="row g-3 needs-validation"
-              :validated="validatedDefault01"
-              @submit="handleSubmitDefault01"
-            >
+            <CForm class="row g-3 needs-validation"
+                   :validated="validatedDefault01"
+                   @submit="handleSubmitDefault01">
               <CCol :md="4">
                 <CFormLabel for="validationDefault01">Email</CFormLabel>
                 <CFormInput id="validationDefault01" value="Mark" required />
@@ -154,12 +144,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormLabel for="validationDefaultUsername">Username</CFormLabel>
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend02">@</CInputGroupText>
-                  <CFormInput
-                    id="validationDefaultUsername"
-                    value=""
-                    aria-describedby="inputGroupPrepend02"
-                    required
-                  />
+                  <CFormInput id="validationDefaultUsername"
+                              value=""
+                              aria-describedby="inputGroupPrepend02"
+                              required />
                   <CFormFeedback invalid> Please choose a username. </CFormFeedback>
                 </CInputGroup>
               </CCol>
@@ -182,12 +170,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormFeedback invalid> Please provide a valid zip. </CFormFeedback>
               </CCol>
               <CCol :xs="12">
-                <CFormCheck
-                  id="invalidCheck"
-                  type="checkbox"
-                  label="Agree to terms and conditions"
-                  required
-                />
+                <CFormCheck id="invalidCheck"
+                            type="checkbox"
+                            label="Agree to terms and conditions"
+                            required />
                 <CFormFeedback invalid> You must agree before submitting. </CFormFeedback>
               </CCol>
               <CCol :xs="12">
@@ -230,14 +216,12 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormLabel for="validationServerUsername">Username</CFormLabel>
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend03">@</CInputGroupText>
-                  <CFormInput
-                    id="validationServerUsername"
-                    type="text"
-                    value=""
-                    aria-describedby="inputGroupPrepend03"
-                    invalid
-                    required
-                  />
+                  <CFormInput id="validationServerUsername"
+                              type="text"
+                              value=""
+                              aria-describedby="inputGroupPrepend03"
+                              invalid
+                              required />
                   <CFormFeedback invalid>Please choose a username.</CFormFeedback>
                 </CInputGroup>
               </CCol>
@@ -260,13 +244,11 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormFeedback invalid>Please provide a valid zip.</CFormFeedback>
               </CCol>
               <CCol :xs="12">
-                <CFormCheck
-                  id="invalidCheck"
-                  type="checkbox"
-                  label="Agree to terms and conditions"
-                  invalid
-                  required
-                />
+                <CFormCheck id="invalidCheck"
+                            type="checkbox"
+                            label="Agree to terms and conditions"
+                            invalid
+                            required />
                 <CFormFeedback invalid>You must agree before submitting.</CFormFeedback>
               </CCol>
               <CCol :xs="12">
@@ -293,36 +275,28 @@ const handleSubmitTooltip01 = (event) => {
             <CForm :validated="true">
               <div class="mb-3">
                 <CFormLabel for="validationTextarea" class="form-label">Textarea</CFormLabel>
-                <CFormTextarea
-                  id="validationTextarea"
-                  placeholder="Required example textarea"
-                  invalid
-                  required
-                ></CFormTextarea>
+                <CFormTextarea id="validationTextarea"
+                               placeholder="Required example textarea"
+                               invalid
+                               required></CFormTextarea>
                 <CFormFeedback invalid> Please enter a message in the textarea. </CFormFeedback>
               </div>
-              <CFormCheck
-                id="validationFormCheck1"
-                class="mb-3"
-                label="Check this checkbox"
-                required
-              />
+              <CFormCheck id="validationFormCheck1"
+                          class="mb-3"
+                          label="Check this checkbox"
+                          required />
               <CFormFeedback invalid>Example invalid feedback text</CFormFeedback>
-              <CFormCheck
-                id="validationFormCheck2"
-                type="radio"
-                name="radio-stacked"
-                label="Check this checkbox"
-                required
-              />
-              <CFormCheck
-                id="validationFormCheck3"
-                class="mb-3"
-                type="radio"
-                name="radio-stacked"
-                label="Or toggle this other radio"
-                required
-              />
+              <CFormCheck id="validationFormCheck2"
+                          type="radio"
+                          name="radio-stacked"
+                          label="Check this checkbox"
+                          required />
+              <CFormCheck id="validationFormCheck3"
+                          class="mb-3"
+                          type="radio"
+                          name="radio-stacked"
+                          label="Or toggle this other radio"
+                          required />
               <CFormFeedback invalid>More example invalid feedback text</CFormFeedback>
               <div class="mb-3">
                 <CFormSelect required aria-label="select example">
@@ -334,12 +308,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormFeedback invalid>Example invalid select feedback</CFormFeedback>
               </div>
               <div class="mb-3">
-                <CFormInput
-                  id="validationTextarea"
-                  type="file"
-                  aria-label="file example"
-                  required
-                />
+                <CFormInput id="validationTextarea"
+                            type="file"
+                            aria-label="file example"
+                            required />
                 <CFormFeedback invalid>Example invalid form file feedback</CFormFeedback>
               </div>
               <div class="mb-3">
@@ -361,12 +333,10 @@ const handleSubmitTooltip01 = (event) => {
             column classes have this already, but your project may require an alternative setup.
           </p>
           <DocsExample href="forms/validation.html#tooltips">
-            <CForm
-              class="row g-3 needs-validation"
-              novalidate
-              :validated="validatedTooltip01"
-              @submit="handleSubmitTooltip01"
-            >
+            <CForm class="row g-3 needs-validation"
+                   novalidate
+                   :validated="validatedTooltip01"
+                   @submit="handleSubmitTooltip01">
               <CCol :md="4" class="position-relative">
                 <CFormLabel for="validationTooltip01">Email</CFormLabel>
                 <CFormInput id="validationTooltip01" value="Mark" required />
@@ -381,12 +351,10 @@ const handleSubmitTooltip01 = (event) => {
                 <CFormLabel for="validationTooltipUsername">Username</CFormLabel>
                 <CInputGroup class="has-validation">
                   <CInputGroupText id="inputGroupPrepend">@</CInputGroupText>
-                  <CFormInput
-                    id="validationTooltipUsername"
-                    value=""
-                    aria-describedby="inputGroupPrepend"
-                    required
-                  />
+                  <CFormInput id="validationTooltipUsername"
+                              value=""
+                              aria-describedby="inputGroupPrepend"
+                              required />
                   <CFormFeedback tooltip invalid> Please choose a username. </CFormFeedback>
                 </CInputGroup>
               </CCol>

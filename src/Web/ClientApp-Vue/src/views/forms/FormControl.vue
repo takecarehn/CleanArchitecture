@@ -10,23 +10,15 @@
           <DocsExample href="forms/form-control.html">
             <CForm>
               <div class="mb-3">
-                <CFormLabel for="exampleFormControlInput1"
-                  >Email address</CFormLabel
-                >
-                <CFormInput
-                  id="exampleFormControlInput1"
-                  type="email"
-                  placeholder="name@example.com"
-                />
+                <CFormLabel for="exampleFormControlInput1">Email address</CFormLabel>
+                <CFormInput id="exampleFormControlInput1"
+                            type="email"
+                            placeholder="name@example.com" />
               </div>
               <div class="mb-3">
-                <CFormLabel for="exampleFormControlTextarea1"
-                  >Example textarea</CFormLabel
-                >
-                <CFormTextarea
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                ></CFormTextarea>
+                <CFormLabel for="exampleFormControlTextarea1">Example textarea</CFormLabel>
+                <CFormTextarea id="exampleFormControlTextarea1"
+                               rows="3"></CFormTextarea>
               </div>
             </CForm>
           </DocsExample>
@@ -44,25 +36,19 @@
             <code>size=&#34;lg&#34;</code> and <code>size=&#34;sm&#34;</code>.
           </p>
           <DocsExample href="forms/form-control.html#sizing">
-            <CFormInput
-              type="text"
-              size="lg"
-              placeholder="Large input"
-              aria-label="lg input example"
-            />
+            <CFormInput type="text"
+                        size="lg"
+                        placeholder="Large input"
+                        aria-label="lg input example" />
             <br />
-            <CFormInput
-              type="text"
-              placeholder="Default input"
-              aria-label="default input example"
-            />
+            <CFormInput type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
             <br />
-            <CFormInput
-              type="text"
-              size="sm"
-              placeholder="Small input"
-              aria-label="sm input example"
-            />
+            <CFormInput type="text"
+                        size="sm"
+                        placeholder="Small input"
+                        aria-label="sm input example" />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -78,20 +64,16 @@
             it a grayed out appearance and remove pointer events.
           </p>
           <DocsExample href="forms/form-control.html#disabled">
-            <CFormInput
-              type="text"
-              placeholder="Disabled input"
-              aria-label="Disabled input example"
-              disabled
-            />
+            <CFormInput type="text"
+                        placeholder="Disabled input"
+                        aria-label="Disabled input example"
+                        disabled />
             <br />
-            <CFormInput
-              type="text"
-              placeholder="Disabled readonly input"
-              aria-label="Disabled input example"
-              disabled
-              readonly
-            />
+            <CFormInput type="text"
+                        placeholder="Disabled readonly input"
+                        aria-label="Disabled input example"
+                        disabled
+                        readonly />
             <br />
           </DocsExample>
         </CCardBody>
@@ -110,12 +92,10 @@
             cursor.
           </p>
           <DocsExample href="forms/form-control.html#readonly">
-            <CFormInput
-              type="text"
-              placeholder="Readonly input here..."
-              aria-label="readonly input example"
-              readonly
-            />
+            <CFormInput type="text"
+                        placeholder="Readonly input here..."
+                        aria-label="readonly input example"
+                        readonly />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -138,13 +118,11 @@
                 Email
               </CFormLabel>
               <div class="col-sm-10">
-                <CFormInput
-                  id="staticEmail"
-                  type="text"
-                  value="email@example.com"
-                  readonly
-                  plain-text
-                />
+                <CFormInput id="staticEmail"
+                            type="text"
+                            value="email@example.com"
+                            readonly
+                            plain-text />
               </div>
             </CRow>
             <CRow class="mb-3">
@@ -162,23 +140,19 @@
                 <CFormLabel for="staticEmail2" class="visually-hidden">
                   Email
                 </CFormLabel>
-                <CFormInput
-                  id="staticEmail2"
-                  type="text"
-                  value="email@example.com"
-                  readonly
-                  plain-text
-                />
+                <CFormInput id="staticEmail2"
+                            type="text"
+                            value="email@example.com"
+                            readonly
+                            plain-text />
               </div>
               <div class="col-auto">
                 <CFormLabel for="inputPassword2" class="visually-hidden">
                   Password
                 </CFormLabel>
-                <CFormInput
-                  id="inputPassword2"
-                  type="password"
-                  placeholder="Password"
-                />
+                <CFormInput id="inputPassword2"
+                            type="password"
+                            placeholder="Password" />
               </div>
               <div class="col-auto">
                 <CButton type="submit" class="mb-3"> Confirm identity </CButton>
@@ -200,15 +174,11 @@
               <CFormInput id="formFile" type="file" />
             </div>
             <div class="mb-3">
-              <CFormLabel for="formFileMultiple"
-                >Multiple files input example</CFormLabel
-              >
+              <CFormLabel for="formFileMultiple">Multiple files input example</CFormLabel>
               <CFormInput id="formFileMultiple" type="file" multiple />
             </div>
             <div class="mb-3">
-              <CFormLabel for="formFileDisabled"
-                >Disabled file input example</CFormLabel
-              >
+              <CFormLabel for="formFileDisabled">Disabled file input example</CFormLabel>
               <CFormInput id="formFileDisabled" type="file" disabled />
             </div>
             <div class="mb-3">
@@ -231,12 +201,10 @@
         <CCardBody>
           <DocsExample href="forms/form-control.html#color">
             <CFormLabel for="exampleColorInput">Color picker</CFormLabel>
-            <CFormInput
-              id="exampleColorInput"
-              type="color"
-              value="#563d7c"
-              title="Choose your color"
-            />
+            <CFormInput id="exampleColorInput"
+                        type="color"
+                        value="#563d7c"
+                        title="Choose your color" />
           </DocsExample>
         </CCardBody>
       </CCard>

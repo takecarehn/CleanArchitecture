@@ -1,5 +1,4 @@
-<script setup>
-import { CChartLine } from '@coreui/vue-chartjs'
+<script setup>import { CChartLine } from '@coreui/vue-chartjs'
 
 const data = {
   labels: ['months', 'a', 'b', 'c', 'd'],
@@ -15,8 +14,7 @@ const data = {
       data: [39, 80, 40, 35, 40, 20, 45],
     },
   ],
-}
-</script>
+}</script>
 
 <template>
   <CChartLine :data="data" />

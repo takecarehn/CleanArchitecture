@@ -1,6 +1,7 @@
 ﻿using Dapper;
 
 namespace CleanArchitecture.Application.Common.Mappings;
+
 public class DynamicParameterMap
 {
     public DynamicParameters Map<T>(T Data) where T : class

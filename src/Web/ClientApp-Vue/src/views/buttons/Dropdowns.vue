@@ -14,9 +14,7 @@
           </p>
           <DocsExample href="components/dropdown.html#single-button">
             <CDropdown>
-              <CDropdownToggle color="secondary"
-                >Dropdown button</CDropdownToggle
-              >
+              <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
               <CDropdownMenu>
                 <CDropdownItem href="#">Action</CDropdownItem>
                 <CDropdownItem href="#">Another action</CDropdownItem>
@@ -28,8 +26,7 @@
             The best part is you can do this with any button variant, too:
           </p>
           <DocsExample href="components/dropdown.html#single-button">
-            <template
-              v-for="color in [
+            <template v-for="color in [
                 'primary',
                 'secondary',
                 'success',
@@ -39,8 +36,7 @@
                 'light',
                 'dark',
               ]"
-              :key="color"
-            >
+                      :key="color">
               <CDropdown variant="btn-group">
                 <CDropdownToggle :color="color">{{ color }}</CDropdownToggle>
                 <CDropdownMenu>
@@ -77,8 +73,7 @@
             the main button.
           </p>
           <DocsExample href="components/dropdown.html#split-button">
-            <template
-              v-for="color in [
+            <template v-for="color in [
                 'primary',
                 'secondary',
                 'success',
@@ -88,13 +83,14 @@
                 'light',
                 'dark',
               ]"
-              :key="color"
-            >
+                      :key="color">
               <CDropdown variant="btn-group">
                 <CButton :color="color">{{ color }}</CButton>
-                <CDropdownToggle :color="color" split>{{
+                <CDropdownToggle :color="color" split>
+                  {{
                   color
-                }}</CDropdownToggle>
+                  }}
+                </CDropdownToggle>
                 <CDropdownMenu>
                   <CDropdownItem href="#">Action</CDropdownItem>
                   <CDropdownItem href="#">Another action</CDropdownItem>
@@ -189,9 +185,7 @@
           </p>
           <DocsExample href="components/dropdown.html#dark-dropdowns">
             <CDropdown dark>
-              <CDropdownToggle color="secondary"
-                >Dropdown button</CDropdownToggle
-              >
+              <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
               <CDropdownMenu>
                 <CDropdownItem href="#">Action</CDropdownItem>
                 <CDropdownItem href="#">Another action</CDropdownItem>
@@ -210,30 +204,24 @@
                 <a class="navbar-brand" href="https://coreui.io/vue/">
                   Navbar
                 </a>
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-coreui-toggle="collapse"
-                  data-coreui-target="#navbarNavDarkDropdown"
-                  aria-controls="navbarNavDarkDropdown"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
+                <button class="navbar-toggler"
+                        type="button"
+                        data-coreui-toggle="collapse"
+                        data-coreui-target="#navbarNavDarkDropdown"
+                        aria-controls="navbarNavDarkDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <div
-                  id="navbarNavDarkDropdown"
-                  class="collapse navbar-collapse"
-                >
+                <div id="navbarNavDarkDropdown"
+                     class="collapse navbar-collapse">
                   <ul class="navbar-nav">
                     <CDropdown dark as="li" variant="nav-item">
                       <CDropdownToggle>Dropdown</CDropdownToggle>
                       <CDropdownMenu>
                         <CDropdownItem href="#">Action</CDropdownItem>
                         <CDropdownItem href="#">Another action</CDropdownItem>
-                        <CDropdownItem href="#"
-                          >Something else here</CDropdownItem
-                        >
+                        <CDropdownItem href="#">Something else here</CDropdownItem>
                         <CDropdownDivider />
                         <CDropdownItem href="#">Separated link</CDropdownItem>
                       </CDropdownMenu>

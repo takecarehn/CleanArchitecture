@@ -1,6 +1,4 @@
-<script setup>
-import IconsImg from '@/assets/images/icons.webp'
-</script>
+<script setup>import IconsImg from '@/assets/images/icons.webp'</script>
 
 <template>
   <div class="bg-warning bg-opacity-10 border border-2 border-warning rounded mb-4">
@@ -15,12 +13,10 @@ import IconsImg from '@/assets/images/icons.webp'
         visit our documentation.
       </div>
       <div class="col-md-auto col-12 mt-3 mt-lg-0">
-        <a
-          class="btn btn-warning text-nowrap text-white"
-          href="https://coreui.io/vue/docs/components/icon.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="btn btn-warning text-nowrap text-white"
+           href="https://coreui.io/vue/docs/components/icon.html"
+           target="_blank"
+           rel="noopener noreferrer">
           Explore Documentation
         </a>
       </div>

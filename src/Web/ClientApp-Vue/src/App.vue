@@ -1,5 +1,4 @@
-<script setup>
-import { onBeforeMount } from 'vue'
+<script setup>import { onBeforeMount } from 'vue'
 import { useColorModes } from '@coreui/vue'
 
 import { useThemeStore } from '@/stores/theme.js'
@@ -27,16 +26,15 @@ onBeforeMount(() => {
   }
 
   setColorMode(currentTheme.theme)
-})
-</script>
+})</script>
 
 <template>
   <router-view />
 </template>
 
 <style lang="scss">
-// Import Main styles for this application
-@use 'styles/style';
-// We use those styles to show code examples, you should remove them in your application.
-@use 'styles/examples';
+  // Import Main styles for this application
+  @use 'styles/style';
+  // We use those styles to show code examples, you should remove them in your application.
+  @use 'styles/examples';
 </style>

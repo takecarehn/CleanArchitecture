@@ -19,19 +19,15 @@
           </p>
           <DocsExample href="forms/floating-labels.html">
             <CFormFloating class="mb-3">
-              <CFormInput
-                id="floatingInput"
-                type="email"
-                placeholder="name@example.com"
-              />
+              <CFormInput id="floatingInput"
+                          type="email"
+                          placeholder="name@example.com" />
               <CFormLabel for="floatingInput">Email address</CFormLabel>
             </CFormFloating>
             <CFormFloating>
-              <CFormInput
-                id="floatingPassword"
-                type="password"
-                placeholder="Password"
-              />
+              <CFormInput id="floatingPassword"
+                          type="password"
+                          placeholder="Password" />
               <CFormLabel for="floatingPassword">Password</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -42,12 +38,10 @@
           </p>
           <DocsExample href="forms/floating-labels.html">
             <CFormFloating>
-              <CFormInput
-                id="floatingInputValue"
-                type="email"
-                placeholder="name@example.com"
-                value="test@example.com"
-              />
+              <CFormInput id="floatingInputValue"
+                          type="email"
+                          placeholder="name@example.com"
+                          value="test@example.com" />
               <CFormLabel for="floatingInputValue">Input with value</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -66,10 +60,8 @@
           </p>
           <DocsExample href="forms/floating-labels.html#textareas">
             <CFormFloating>
-              <CFormTextarea
-                id="floatingTextarea"
-                placeholder="Leave a comment here"
-              ></CFormTextarea>
+              <CFormTextarea id="floatingTextarea"
+                             placeholder="Leave a comment here"></CFormTextarea>
               <CFormLabel for="floatingTextarea">Comments</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -80,11 +72,9 @@
           </p>
           <DocsExample href="forms/floating-labels.html#textareas">
             <CFormFloating>
-              <CFormTextarea
-                id="floatingTextarea2"
-                placeholder="Leave a comment here"
-                style="height: 100px"
-              ></CFormTextarea>
+              <CFormTextarea id="floatingTextarea2"
+                             placeholder="Leave a comment here"
+                             style="height: 100px"></CFormTextarea>
               <CFormLabel for="floatingTextarea2">Comments</CFormLabel>
             </CFormFloating>
           </DocsExample>
@@ -110,10 +100,8 @@
           </p>
           <DocsExample href="forms/floating-labels.html#selects">
             <CFormFloating>
-              <CFormSelect
-                id="floatingSelect"
-                aria-label="Floating label select example"
-              >
+              <CFormSelect id="floatingSelect"
+                           aria-label="Floating label select example">
                 <option>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -139,29 +127,23 @@
             <CRow :xs="{ gutter: 2 }">
               <CCol md>
                 <CFormFloating>
-                  <CFormInput
-                    id="floatingInputGrid"
-                    type="email"
-                    placeholder="name@example.com"
-                    value="email@example.com"
-                  />
+                  <CFormInput id="floatingInputGrid"
+                              type="email"
+                              placeholder="name@example.com"
+                              value="email@example.com" />
                   <CFormLabel for="floatingInputGrid">Email address</CFormLabel>
                 </CFormFloating>
               </CCol>
               <CCol md>
                 <CFormFloating>
-                  <CFormSelect
-                    id="floatingSelectGrid"
-                    aria-label="Floating label select example"
-                  >
+                  <CFormSelect id="floatingSelectGrid"
+                               aria-label="Floating label select example">
                     <option>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </CFormSelect>
-                  <CFormLabel for="floatingSelectGrid"
-                    >Works with selects</CFormLabel
-                  >
+                  <CFormLabel for="floatingSelectGrid">Works with selects</CFormLabel>
                 </CFormFloating>
               </CCol>
             </CRow>

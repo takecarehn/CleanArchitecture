@@ -1,11 +1,9 @@
-<script setup>
-import { ref } from 'vue'
+<script setup>import { ref } from 'vue'
 
 const visible = ref(false)
 const visibleA = ref(false)
 const visibleB = ref(false)
-const visibleHorizontal = ref(false)
-</script>
+const visibleHorizontal = ref(false)</script>
 
 <template>
   <CRow>
@@ -41,14 +39,11 @@ const visibleHorizontal = ref(false)
             <code>height</code> and set a <code>width</code> on the immediate child element.
           </p>
           <DocsExample href="components/collapse.html#horizontal">
-            <CButton
-              class="mb-3"
-              color="primary"
-              aria-expanded="{visible}"
-              aria-controls="collapseWidthExample"
-              @click="visibleHorizontal = !visibleHorizontal"
-              >Button</CButton
-            >
+            <CButton class="mb-3"
+                     color="primary"
+                     aria-expanded="{visible}"
+                     aria-controls="collapseWidthExample"
+                     @click="visibleHorizontal = !visibleHorizontal">Button</CButton>
             <div style="min-height: 120px">
               <CCollapse horizontal :visible="visibleHorizontal">
                 <CCard style="width: 300px">
@@ -72,15 +67,14 @@ const visibleHorizontal = ref(false)
           <DocsExample href="components/collapse.html#multiple-targets">
             <CButton color="primary" @click="visibleA = !visibleA">Toggle first element</CButton>
             <CButton color="primary" @click="visibleB = !visibleB">Toggle second element</CButton>
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleA = !visibleA
-                  visibleB = !visibleB
-                }
-              "
-            >
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleA = !visibleA
+              visibleB = !visibleB
+              }
+              ">
               Toggle both elements
             </CButton>
             <CRow>

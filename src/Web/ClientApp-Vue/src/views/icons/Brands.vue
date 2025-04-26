@@ -1,10 +1,8 @@
-<script setup>
-import { brandSet } from '@coreui/icons'
+<script setup>import { brandSet } from '@coreui/icons'
 import DocsIcons from '../../components/DocsIcons.vue';
 
 const toKebabCase = (str) => str.replace(/([a-z])([A-Z0-9])/g, '$1-$2').toLowerCase()
-const icons = brandSet
-</script>
+const icons = brandSet</script>
 
 <template>
   <DocsIcons />

@@ -28,6 +28,5 @@ public class UpdateTodoListCommandHandler : IRequestHandler<UpdateTodoListComman
         entity.Title = request.Title;
 
         await _context.SaveChangesAsync(cancellationToken);
-
     }
 }

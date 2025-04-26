@@ -9,9 +9,9 @@ export class FetchDataComponent {
   public forecasts: WeatherForecast[] = [];
 
   constructor(private client: WeatherForecastsClient) {
-      client.getWeatherForecasts().subscribe({
-          next: result => this.forecasts = result,
-          error: error => console.error(error)
-      });
+    client.getWeatherForecasts().subscribe({
+      next: result => this.forecasts = result,
+      error: error => console.error(error)
+    });
   }
 }

@@ -1,5 +1,4 @@
-<script setup>
-import { CChart } from '@coreui/vue-chartjs'
+<script setup>import { CChart } from '@coreui/vue-chartjs'
 
 const options = {
   elements: {
@@ -27,25 +26,23 @@ const options = {
       display: false,
     },
   },
-}
-</script>
+}</script>
 
 <template>
   <CRow :xs="{ gutter: 4 }">
     <CCol :sm="6" :xl="4" :xxl="3">
-      <CWidgetStatsD
-        style="--cui-card-cap-bg: #3b5998"
-        :values="[
+      <CWidgetStatsD style="--cui-card-cap-bg: #3b5998"
+                     :values="[
           { title: 'friends', value: '89K' },
           { title: 'feeds', value: '459' },
-        ]"
-      >
-        <template #icon><CIcon icon="cib-facebook" height="52" class="my-4 text-white" /></template>
+        ]">
+        <template #icon>
+          <CIcon icon="cib-facebook" height="52" class="my-4 text-white" />
+        </template>
         <template #chart>
-          <CChart
-            class="position-absolute w-100 h-100"
-            type="line"
-            :data="{
+          <CChart class="position-absolute w-100 h-100"
+                  type="line"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -58,25 +55,23 @@ const options = {
                 },
               ],
             }"
-            :options="options"
-          />
+                  :options="options" />
         </template>
       </CWidgetStatsD>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
-      <CWidgetStatsD
-        style="--cui-card-cap-bg: #00aced"
-        :values="[
+      <CWidgetStatsD style="--cui-card-cap-bg: #00aced"
+                     :values="[
           { title: 'followers', value: '973k' },
           { title: 'tweets', value: '1.792' },
-        ]"
-      >
-        <template #icon><CIcon icon="cib-twitter" height="52" class="my-4 text-white" /></template>
+        ]">
+        <template #icon>
+          <CIcon icon="cib-twitter" height="52" class="my-4 text-white" />
+        </template>
         <template #chart>
-          <CChart
-            class="position-absolute w-100 h-100"
-            type="line"
-            :data="{
+          <CChart class="position-absolute w-100 h-100"
+                  type="line"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -89,25 +84,23 @@ const options = {
                 },
               ],
             }"
-            :options="options"
-          />
+                  :options="options" />
         </template>
       </CWidgetStatsD>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
-      <CWidgetStatsD
-        style="--cui-card-cap-bg: #4875b4"
-        :values="[
+      <CWidgetStatsD style="--cui-card-cap-bg: #4875b4"
+                     :values="[
           { title: 'contacts', value: '500' },
           { title: 'feeds', value: '1.292' },
-        ]"
-      >
-        <template #icon><CIcon icon="cib-linkedin" height="52" class="my-4 text-white" /></template>
+        ]">
+        <template #icon>
+          <CIcon icon="cib-linkedin" height="52" class="my-4 text-white" />
+        </template>
         <template #chart>
-          <CChart
-            class="position-absolute w-100 h-100"
-            type="line"
-            :data="{
+          <CChart class="position-absolute w-100 h-100"
+                  type="line"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -120,25 +113,23 @@ const options = {
                 },
               ],
             }"
-            :options="options"
-          />
+                  :options="options" />
         </template>
       </CWidgetStatsD>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
-      <CWidgetStatsD
-        color="warning"
-        :values="[
+      <CWidgetStatsD color="warning"
+                     :values="[
           { title: 'events', value: '12+' },
           { title: 'meetings', value: '4' },
-        ]"
-      >
-        <template #icon><CIcon icon="cil-calendar" height="52" class="my-4 text-white" /></template>
+        ]">
+        <template #icon>
+          <CIcon icon="cil-calendar" height="52" class="my-4 text-white" />
+        </template>
         <template #chart>
-          <CChart
-            class="position-absolute w-100 h-100"
-            type="line"
-            :data="{
+          <CChart class="position-absolute w-100 h-100"
+                  type="line"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -151,8 +142,7 @@ const options = {
                 },
               ],
             }"
-            :options="options"
-          />
+                  :options="options" />
         </template>
       </CWidgetStatsD>
     </CCol>

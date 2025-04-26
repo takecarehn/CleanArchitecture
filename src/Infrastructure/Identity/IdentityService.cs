@@ -119,4 +119,34 @@ public class IdentityService : IIdentityService
             return permissions.Distinct().ToList();
         }) ?? new List<string>();
     }
+
+    public async Task<Result> LockUserAsync(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return Result.Failure("User not found");
+        }
+
+        user.LockoutEnd = DateTimeOffset.MaxValue;
+        user.LockoutEnabled = true;
+        var result = await _userManager.UpdateAsync(user);
+
+        return result.Succeeded ? Result.Success("User locked successfully") : Result.Failure(result.Errors.Select(e => e.Description));
+    }
+
+    public async Task<Result> UnlockUserAsync(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+        {
+            return Result.Failure("User not found");
+        }
+
+        user.LockoutEnd = null;
+        user.AccessFailedCount = 0;
+        var result = await _userManager.UpdateAsync(user);
+
+        return result.Succeeded ? Result.Success("User unlocked successfully") : Result.Failure(result.Errors.Select(e => e.Description));
+    }
 }

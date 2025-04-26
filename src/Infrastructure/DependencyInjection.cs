@@ -78,9 +78,25 @@ public static class DependencyInjection
         builder.Services.AddAuthorizationBuilder();
 
         builder.Services
-            .AddIdentityCore<ApplicationUser>()
-            .AddRoles<IdentityRole>()
+            .AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                // Config Password
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 6;
+
+                // Config Lockout
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // Config User
+                options.User.RequireUniqueEmail = true;
+            })
             .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders() // Need for Reset Password, Confirm Email, v.v.
             .AddApiEndpoints();
 
         builder.Services.AddSingleton(TimeProvider.System);

@@ -15,7 +15,6 @@
   & + p {
     margin-top: 1.5rem;
   }
-
   // Components examples
   .preview {
     + p {
@@ -43,13 +42,11 @@
     > :last-child {
       margin-bottom: 0;
     }
-
     // Images
     > svg + svg,
     > img + img {
       margin-left: .5rem;
     }
-
     // Buttons
     .col > .btn,
     .col-auto > .btn,
@@ -57,10 +54,10 @@
     > .btn-group {
       margin: .25rem .125rem;
     }
+
     > .btn-toolbar + .btn-toolbar {
       margin-top: .5rem;
     }
-
     // List groups
     > .list-group {
       max-width: 400px;
@@ -69,7 +66,6 @@
     > [class*="list-group-horizontal"] {
       max-width: 100%;
     }
-
     // Navbars
     .fixed-top,
     .sticky-top {
@@ -87,11 +83,11 @@
       .sticky-top {
         margin: -1.5rem -1.5rem 1rem;
       }
+
       .fixed-bottom {
         margin: 1rem -1.5rem -1.5rem;
       }
     }
-
     // Pagination
     .pagination {
       margin-top: .5rem;

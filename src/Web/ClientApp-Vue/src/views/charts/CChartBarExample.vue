@@ -1,5 +1,4 @@
-<script setup>
-import { CChartBar } from '@coreui/vue-chartjs'
+<script setup>import { CChartBar } from '@coreui/vue-chartjs'
 
 const data = {
   labels: [
@@ -23,8 +22,7 @@ const data = {
       data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 12],
     },
   ],
-}
-</script>
+}</script>
 
 <template>
   <CChartBar :data="data" />

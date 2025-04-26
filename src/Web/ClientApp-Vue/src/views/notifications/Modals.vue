@@ -1,5 +1,4 @@
-<script setup>
-import { ref } from 'vue'
+<script setup>import { ref } from 'vue'
 
 const visibleLiveDemo = ref(false)
 const visibleStaticBackdropDemo = ref(false)
@@ -16,8 +15,7 @@ const fullscreenSmDemo = ref(false)
 const fullscreenMdDemo = ref(false)
 const fullscreenLgDemo = ref(false)
 const fullscreenXlDemo = ref(false)
-const fullscreenXxlDemo = ref(false)
-</script>
+const fullscreenXxlDemo = ref(false)</script>
 
 <template>
   <CRow>
@@ -36,12 +34,10 @@ const fullscreenXxlDemo = ref(false)
             possible, or provide another explicit dismiss action.
           </p>
           <DocsExample href="components/modal.html#modal-components">
-            <CModal
-              class="show d-block position-static"
-              :backdrop="false"
-              :keyboard="false"
-              visible
-            >
+            <CModal class="show d-block position-static"
+                    :backdrop="false"
+                    :keyboard="false"
+                    visible>
               <CModalHeader dismiss>
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
@@ -64,43 +60,40 @@ const fullscreenXxlDemo = ref(false)
             from the top of the page.
           </p>
           <DocsExample href="components/modal.html#live-demo">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleLiveDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleLiveDemo = true
+              }
               "
-              >Launch demo modal</CButton
-            >
-            <CModal
-              :visible="visibleLiveDemo"
-              @close="
-                () => {
-                  visibleLiveDemo = false
+              >Launch demo modal
+            </CButton>
+            <CModal :visible="visibleLiveDemo"
+                    @close="
+                    ()=>
+              {
+              visibleLiveDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleLiveDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleLiveDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>Woohoo, you're reading this text in a modal!</CModalBody>
               <CModalFooter>
-                <CButton
-                  color="secondary"
-                  @click="
-                    () => {
-                      visibleLiveDemo = false
-                    }
-                  "
-                >
+                <CButton color="secondary"
+                         @click="
+                         ()=>
+                  {
+                  visibleLiveDemo = false
+                  }
+                  ">
                   Close
                 </CButton>
                 <CButton color="primary">Save changes</CButton>
@@ -120,44 +113,41 @@ const fullscreenXxlDemo = ref(false)
             Click the button below to try it.
           </p>
           <DocsExample href="components/modal.html#static-backdrop">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleStaticBackdropDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleStaticBackdropDemo = true
+              }
               "
-              >Launch demo modal</CButton
-            >
-            <CModal
-              backdrop="static"
-              :visible="visibleStaticBackdropDemo"
-              @close="
-                () => {
-                  visibleStaticBackdropDemo = false
+              >Launch demo modal
+            </CButton>
+            <CModal backdrop="static"
+                    :visible="visibleStaticBackdropDemo"
+                    @close="
+                    ()=>
+              {
+              visibleStaticBackdropDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleStaticBackdropDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleStaticBackdropDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>Woohoo, you're reading this text in a modal!</CModalBody>
               <CModalFooter>
-                <CButton
-                  color="secondary"
-                  @click="
-                    () => {
-                      visibleStaticBackdropDemo = false
-                    }
-                  "
-                >
+                <CButton color="secondary"
+                         @click="
+                         ()=>
+                  {
+                  visibleStaticBackdropDemo = false
+                  }
+                  ">
                   Close
                 </CButton>
                 <CButton color="primary">Save changes</CButton>
@@ -178,31 +168,29 @@ const fullscreenXxlDemo = ref(false)
             of the page itself. Try the demo below to see what we mean.
           </p>
           <DocsExample href="components/modal.html#scrolling-long-content">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleScrollingLongContentDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleScrollingLongContentDemo = true
+              }
               "
-              >Launch demo modal</CButton
-            >
-            <CModal
-              :visible="visibleScrollingLongContentDemo"
-              @close="
-                () => {
-                  visibleScrollingLongContentDemo = false
+              >Launch demo modal
+            </CButton>
+            <CModal :visible="visibleScrollingLongContentDemo"
+                    @close="
+                    ()=>
+              {
+              visibleScrollingLongContentDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleScrollingLongContentDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleScrollingLongContentDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>
@@ -298,32 +286,30 @@ const fullscreenXxlDemo = ref(false)
             <code>scrollable</code> prop.
           </p>
           <DocsExample href="components/modal.html#scrolling-long-content">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleScrollableDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleScrollableDemo = true
+              }
               "
-              >Launch demo modal</CButton
-            >
-            <CModal
-              scrollable
-              :visible="visibleScrollableDemo"
-              @close="
-                () => {
-                  visibleScrollableDemo = false
+              >Launch demo modal
+            </CButton>
+            <CModal scrollable
+                    :visible="visibleScrollableDemo"
+                    @close="
+                    ()=>
+              {
+              visibleScrollableDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleScrollableDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleScrollableDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>
@@ -426,32 +412,30 @@ const fullscreenXxlDemo = ref(false)
             center the modal.
           </p>
           <DocsExample href="components/modal.html#vertically-centered">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleVerticallyCenteredDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleVerticallyCenteredDemo = true
+              }
               "
-              >Vertically centered modal</CButton
-            >
-            <CModal
-              alignment="center"
-              :visible="visibleVerticallyCenteredDemo"
-              @close="
-                () => {
-                  visibleVerticallyCenteredDemo = false
+              >Vertically centered modal
+            </CButton>
+            <CModal alignment="center"
+                    :visible="visibleVerticallyCenteredDemo"
+                    @close="
+                    ()=>
+              {
+              visibleVerticallyCenteredDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleVerticallyCenteredDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleVerticallyCenteredDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>
@@ -460,14 +444,13 @@ const fullscreenXxlDemo = ref(false)
                 vestibulum at eros.
               </CModalBody>
               <CModalFooter>
-                <CButton
-                  color="secondary"
-                  @click="
-                    () => {
-                      visibleVerticallyCenteredDemo = false
-                    }
-                  "
-                >
+                <CButton color="secondary"
+                         @click="
+                         ()=>
+                  {
+                  visibleVerticallyCenteredDemo = false
+                  }
+                  ">
                   Close
                 </CButton>
                 <CButton color="primary">Save changes</CButton>
@@ -476,33 +459,31 @@ const fullscreenXxlDemo = ref(false)
           </DocsExample>
 
           <DocsExample href="components/modal.html#vertically-centered">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  visibleVerticallyCenteredScrollableDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              visibleVerticallyCenteredScrollableDemo = true
+              }
               "
-              >Vertically centered scrollable modal</CButton
-            >
-            <CModal
-              alignment="center"
-              scrollable
-              :visible="visibleVerticallyCenteredScrollableDemo"
-              @close="
-                () => {
-                  visibleVerticallyCenteredScrollableDemo = false
+              >Vertically centered scrollable modal
+            </CButton>
+            <CModal alignment="center"
+                    scrollable
+                    :visible="visibleVerticallyCenteredScrollableDemo"
+                    @close="
+                    ()=>
+              {
+              visibleVerticallyCenteredScrollableDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                visibleVerticallyCenteredScrollableDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    visibleVerticallyCenteredScrollableDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>
@@ -511,14 +492,13 @@ const fullscreenXxlDemo = ref(false)
                 vestibulum at eros.
               </CModalBody>
               <CModalFooter>
-                <CButton
-                  color="secondary"
-                  @click="
-                    () => {
-                      visibleVerticallyCenteredScrollableDemo = false
-                    }
-                  "
-                >
+                <CButton color="secondary"
+                         @click="
+                         ()=>
+                  {
+                  visibleVerticallyCenteredScrollableDemo = false
+                  }
+                  ">
                   Close
                 </CButton>
                 <CButton color="primary">Save changes</CButton>
@@ -538,45 +518,40 @@ const fullscreenXxlDemo = ref(false)
             automatically dismissed.
           </p>
           <DocsExample href="components/modal.html#tooltips-and-popovers">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  tooltipsAndPopoversDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              tooltipsAndPopoversDemo = true
+              }
               "
-              >Launch demo modal</CButton
-            >
-            <CModal
-              :visible="tooltipsAndPopoversDemo"
-              @close="
-                () => {
-                  tooltipsAndPopoversDemo = false
+              >Launch demo modal
+            </CButton>
+            <CModal :visible="tooltipsAndPopoversDemo"
+                    @close="
+                    ()=>
+              {
+              tooltipsAndPopoversDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                tooltipsAndPopoversDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    tooltipsAndPopoversDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Modal title</CModalTitle>
               </CModalHeader>
               <CModalBody>
                 <h5>Popover in a modal</h5>
                 <p>
                   This
-                  <CButton
-                    v-c-popover="{
+                  <CButton v-c-popover="{
                       header: 'Popover title',
                       content: 'Popover body content is set in this property.',
                     }"
-                    color="secondary"
-                    >button</CButton
-                  >
+                           color="secondary">button</CButton>
                 </p>
                 <hr />
                 <h5>Tooltips in a modal</h5>
@@ -586,14 +561,13 @@ const fullscreenXxlDemo = ref(false)
                 </p>
               </CModalBody>
               <CModalFooter>
-                <CButton
-                  color="secondary"
-                  @click="
-                    () => {
-                      tooltipsAndPopoversDemo = false
-                    }
-                  "
-                >
+                <CButton color="secondary"
+                         @click="
+                         ()=>
+                  {
+                  tooltipsAndPopoversDemo = false
+                  }
+                  ">
                   Close
                 </CButton>
                 <CButton color="primary">Save changes</CButton>
@@ -658,92 +632,86 @@ const fullscreenXxlDemo = ref(false)
             </tbody>
           </table>
           <DocsExample href="components/modal.html#optional-sizes">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  xlDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              xlDemo = true
+              }
               "
-              >Extra large modal</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  lgDemo = true
-                }
+              >Extra large modal
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              lgDemo = true
+              }
               "
-              >Large modal</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  smDemo = true
-                }
+              >Large modal
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              smDemo = true
+              }
               "
-              >Small modal</CButton
-            >
-            <CModal
-              size="xl"
-              :visible="xlDemo"
-              @close="
-                () => {
-                  xlDemo = false
+              >Small modal
+            </CButton>
+            <CModal size="xl"
+                    :visible="xlDemo"
+                    @close="
+                    ()=>
+              {
+              xlDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                xlDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    xlDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Extra large modal</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              size="lg"
-              :visible="lgDemo"
-              @close="
-                () => {
-                  lgDemo = false
+            <CModal size="lg"
+                    :visible="lgDemo"
+                    @close="
+                    ()=>
+              {
+              lgDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                lgDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    lgDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Large modal</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              size="sm"
-              :visible="smDemo"
-              @close="
-                () => {
-                  smDemo = false
+            <CModal size="sm"
+                    :visible="smDemo"
+                    @close="
+                    ()=>
+              {
+              smDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                smDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    smDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Small modal</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
@@ -807,182 +775,170 @@ const fullscreenXxlDemo = ref(false)
             </tbody>
           </table>
           <DocsExample href="components/modal.html#fullscreen-modal">
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenDemo = true
-                }
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenDemo = true
+              }
               "
-              >Full screen</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenSmDemo = true
-                }
+              >Full screen
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenSmDemo = true
+              }
               "
-              >Full screen below sm</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenMdDemo = true
-                }
+              >Full screen below sm
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenMdDemo = true
+              }
               "
-              >Full screen below md</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenLgDemo = true
-                }
+              >Full screen below md
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenLgDemo = true
+              }
               "
-              >Full screen below lg</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenXlDemo = true
-                }
+              >Full screen below lg
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenXlDemo = true
+              }
               "
-              >Full screen below xl</CButton
-            >
-            <CButton
-              color="primary"
-              @click="
-                () => {
-                  fullscreenXxlDemo = true
-                }
+              >Full screen below xl
+            </CButton>
+            <CButton color="primary"
+                     @click="
+                     ()=>
+              {
+              fullscreenXxlDemo = true
+              }
               "
-              >Full screen below xxl</CButton
-            >
-            <CModal
-              fullscreen
-              :visible="fullscreenDemo"
-              @close="
-                () => {
-                  fullscreenDemo = false
+              >Full screen below xxl
+            </CButton>
+            <CModal fullscreen
+                    :visible="fullscreenDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                xlDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    xlDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              fullscreen="sm"
-              :visible="fullscreenSmDemo"
-              @close="
-                () => {
-                  fullscreenSmDemo = false
+            <CModal fullscreen="sm"
+                    :visible="fullscreenSmDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenSmDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                fullscreenSmDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    fullscreenSmDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen below sm</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              fullscreen="md"
-              :visible="fullscreenMdDemo"
-              @close="
-                () => {
-                  fullscreenMdDemo = false
+            <CModal fullscreen="md"
+                    :visible="fullscreenMdDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenMdDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                fullscreenMdDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    fullscreenMdDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen below md</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              fullscreen="lg"
-              :visible="fullscreenLgDemo"
-              @close="
-                () => {
-                  fullscreenLgDemo = false
+            <CModal fullscreen="lg"
+                    :visible="fullscreenLgDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenLgDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                fullscreenLgDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    fullscreenLgDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen below lg</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              fullscreen="xl"
-              :visible="fullscreenXlDemo"
-              @close="
-                () => {
-                  fullscreenXlDemo = false
+            <CModal fullscreen="xl"
+                    :visible="fullscreenXlDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenXlDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                fullscreenXlDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    fullscreenXlDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen below xl</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>
             </CModal>
-            <CModal
-              fullscreen="xxl"
-              :visible="fullscreenXxlDemo"
-              @close="
-                () => {
-                  fullscreenXxlDemo = false
+            <CModal fullscreen="xxl"
+                    :visible="fullscreenXxlDemo"
+                    @close="
+                    ()=>
+              {
+              fullscreenXxlDemo = false
+              }
+              ">
+              <CModalHeader dismiss
+                            @close="
+                            ()=>
+                {
+                fullscreenXxlDemo = false
                 }
-              "
-            >
-              <CModalHeader
-                dismiss
-                @close="
-                  () => {
-                    fullscreenXxlDemo = false
-                  }
-                "
-              >
+                ">
                 <CModalTitle>Full screen below xxl</CModalTitle>
               </CModalHeader>
               <CModalBody> ... </CModalBody>

@@ -1,7 +1,4 @@
-
-<script setup>
-import VueImg from '@/assets/images/vue.jpg'
-</script>
+<script setup>import VueImg from '@/assets/images/vue.jpg'</script>
 
 <template>
   <CRow>
@@ -18,9 +15,7 @@ import VueImg from '@/assets/images/vue.jpg'
             with flexbox, they offer easy alignment and mix well with other
             CoreUI components. Cards have no top, left, and right margins by
             default, so use
-            <a href="https://coreui.io/docs/utilities/spacing"
-              >spacing utilities</a
-            >
+            <a href="https://coreui.io/docs/utilities/spacing">spacing utilities</a>
             as needed. They have no fixed width to start, so they&#39;ll fill
             the full width of its parent.
           </p>
@@ -86,9 +81,7 @@ import VueImg from '@/assets/images/vue.jpg'
             <CCard style="width: 18rem">
               <CCardBody>
                 <CCardTitle>Card title</CCardTitle>
-                <CCardSubtitle class="mb-2 text-body-secondary"
-                  >Card subtitle</CCardSubtitle
-                >
+                <CCardSubtitle class="mb-2 text-body-secondary">Card subtitle</CCardSubtitle>
                 <CCardText>
                   Some quick example text to build on the card title and make up
                   the bulk of the card&#39;s content.
@@ -323,9 +316,7 @@ import VueImg from '@/assets/images/vue.jpg'
           <h3>Using utilities</h3>
           <p class="text-body-secondary small">
             Use some of
-            <a href="https://coreui.io/docs/utilities/sizing/"
-              >available sizing utilities</a
-            >
+            <a href="https://coreui.io/docs/utilities/sizing/">available sizing utilities</a>
             to rapidly set a card&#39;s width.
           </p>
           <DocsExample href="components/card.html/#sizing">
@@ -379,9 +370,7 @@ import VueImg from '@/assets/images/vue.jpg'
           <p class="text-body-secondary small">
             You can instantly change the text arrangement of any card—in its
             whole or specific parts—with
-            <a href="https://coreui.io/docs/utilities/text/#text-alignment"
-              >text align classes</a
-            >
+            <a href="https://coreui.io/docs/utilities/text/#text-alignment">text align classes</a>
             .
           </p>
           <DocsExample href="components/card.html/#text-alignment">
@@ -505,9 +494,7 @@ import VueImg from '@/assets/images/vue.jpg'
                       little bit longer.
                     </CCardText>
                     <CCardText>
-                      <small class="text-body-secondary"
-                        >Last updated 3 mins ago</small
-                      >
+                      <small class="text-body-secondary">Last updated 3 mins ago</small>
                     </CCardText>
                   </CCardBody>
                 </CCard>
@@ -522,9 +509,7 @@ import VueImg from '@/assets/images/vue.jpg'
                       little bit longer.
                     </CCardText>
                     <CCardText>
-                      <small class="text-body-secondary"
-                        >Last updated 3 mins ago</small
-                      >
+                      <small class="text-body-secondary">Last updated 3 mins ago</small>
                     </CCardText>
                   </CCardBody>
                   <CCardImage orientation="bottom" :src="VueImg" />
@@ -551,8 +536,7 @@ import VueImg from '@/assets/images/vue.jpg'
           </p>
           <DocsExample href="components/card.html/#background-and-color">
             <CRow>
-              <template
-                v-for="item in [
+              <template v-for="item in [
                   { color: 'primary', textColor: 'white' },
                   { color: 'secondary', textColor: 'white' },
                   { color: 'success', textColor: 'white' },
@@ -568,14 +552,11 @@ import VueImg from '@/assets/images/vue.jpg'
                   { color: 'light' },
                   { color: 'dark', textColor: 'white' },
                 ]"
-                :key="item"
-              >
+                        :key="item">
                 <CCol :lg="4">
-                  <CCard
-                    class="mb-3"
-                    :color="item.color"
-                    :text-color="item.textColor"
-                  >
+                  <CCard class="mb-3"
+                         :color="item.color"
+                         :text-color="item.textColor">
                     <CCardHeader>Header</CCardHeader>
                     <CCardBody>
                       <CCardTitle>{{ item.color }} card title</CCardTitle>
@@ -592,17 +573,14 @@ import VueImg from '@/assets/images/vue.jpg'
           <h3>Border</h3>
           <p class="text-body-secondary small">
             Use
-            <a href="https://coreui.io/docs/utilities/borders/"
-              >border utilities</a
-            >
+            <a href="https://coreui.io/docs/utilities/borders/">border utilities</a>
             to change just the <code>border-color</code> of a card. Note that
             you can set <code>text-color</code> property on the
             <code>&lt;CCard&gt;</code> or a subset of the card&#39;s contents as
             shown below.
           </p>
           <DocsExample href="components/card.html/#border">
-            <template
-              v-for="item in [
+            <template v-for="item in [
                 { color: 'primary', textColor: 'primary' },
                 { color: 'secondary', textColor: 'secondary' },
                 { color: 'success', textColor: 'success' },
@@ -612,21 +590,18 @@ import VueImg from '@/assets/images/vue.jpg'
                 { color: 'light' },
                 { color: 'dark' },
               ]"
-              :key="item"
-            >
-              <CCard
-                :text-color="item.textColor"
-                class="mb-3"
-                :class="'border-' + item.color"
-                style="max-width: 18rem"
-              >
+                      :key="item">
+              <CCard :text-color="item.textColor"
+                     class="mb-3"
+                     :class="'border-' + item.color"
+                     style="max-width: 18rem">
                 <CCardHeader>Header</CCardHeader>
                 <CCardBody>
                   <CCardTitle>{{ item.color }} card title</CCardTitle>
-                  <CCardText
-                    >Some quick example text to build on the card title and make
-                    up the bulk of the card's content.</CCardText
-                  >
+                  <CCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </CCardText>
                 </CCardBody>
               </CCard>
             </template>
@@ -634,17 +609,14 @@ import VueImg from '@/assets/images/vue.jpg'
           <h3>Top border</h3>
           <p class="text-body-secondary small">
             Use
-            <a href="https://coreui.io/docs/utilities/borders/"
-              >border utilities</a
-            >
+            <a href="https://coreui.io/docs/utilities/borders/">border utilities</a>
             to change just the <code>border-color</code> of a card. Note that
             you can set <code>text-color</code> property on the
             <code>&lt;CCard&gt;</code> or a subset of the card&#39;s contents as
             shown below.
           </p>
           <DocsExample href="components/card.html/#top-border">
-            <template
-              v-for="item in [
+            <template v-for="item in [
                 { color: 'primary', textColor: 'primary' },
                 { color: 'secondary', textColor: 'secondary' },
                 { color: 'success', textColor: 'success' },
@@ -654,21 +626,18 @@ import VueImg from '@/assets/images/vue.jpg'
                 { color: 'light' },
                 { color: 'dark' },
               ]"
-              :key="item.color"
-            >
-              <CCard
-                :text-color="item.textColor"
-                class="mb-3 border-top-3"
-                :class="'border-top-' + item.color"
-                style="max-width: 18rem"
-              >
+                      :key="item.color">
+              <CCard :text-color="item.textColor"
+                     class="mb-3 border-top-3"
+                     :class="'border-top-' + item.color"
+                     style="max-width: 18rem">
                 <CCardHeader>Header</CCardHeader>
                 <CCardBody>
                   <CCardTitle>{{ item.color }} card title</CCardTitle>
-                  <CCardText
-                    >Some quick example text to build on the card title and make
-                    up the bulk of the card's content.</CCardText
-                  >
+                  <CCardText>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </CCardText>
                 </CCardBody>
               </CCard>
             </template>
@@ -700,9 +669,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     longer.
                   </CCardText>
                   <CCardText>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardText>
                 </CCardBody>
               </CCard>
@@ -715,9 +682,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     additional content.
                   </CCardText>
                   <CCardText>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardText>
                 </CCardBody>
               </CCard>
@@ -731,9 +696,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     content than the first to show that equal height action.
                   </CCardText>
                   <CCardText>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardText>
                 </CCardBody>
               </CCard>
@@ -756,9 +719,7 @@ import VueImg from '@/assets/images/vue.jpg'
                   </CCardText>
                 </CCardBody>
                 <CCardFooter>
-                  <small class="text-body-secondary"
-                    >Last updated 3 mins ago</small
-                  >
+                  <small class="text-body-secondary">Last updated 3 mins ago</small>
                 </CCardFooter>
               </CCard>
               <CCard>
@@ -771,9 +732,7 @@ import VueImg from '@/assets/images/vue.jpg'
                   </CCardText>
                 </CCardBody>
                 <CCardFooter>
-                  <small class="text-body-secondary"
-                    >Last updated 3 mins ago</small
-                  >
+                  <small class="text-body-secondary">Last updated 3 mins ago</small>
                 </CCardFooter>
               </CCard>
               <CCard>
@@ -787,9 +746,7 @@ import VueImg from '@/assets/images/vue.jpg'
                   </CCardText>
                 </CCardBody>
                 <CCardFooter>
-                  <small class="text-body-secondary"
-                    >Last updated 3 mins ago</small
-                  >
+                  <small class="text-body-secondary">Last updated 3 mins ago</small>
                 </CCardFooter>
               </CCard>
             </CCardGroup>
@@ -827,9 +784,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -845,9 +800,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -863,9 +816,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -881,9 +832,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -907,9 +856,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -925,9 +872,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -943,9 +888,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>
@@ -961,9 +904,7 @@ import VueImg from '@/assets/images/vue.jpg'
                     </CCardText>
                   </CCardBody>
                   <CCardFooter>
-                    <small class="text-body-secondary"
-                      >Last updated 3 mins ago</small
-                    >
+                    <small class="text-body-secondary">Last updated 3 mins ago</small>
                   </CCardFooter>
                 </CCard>
               </CCol>

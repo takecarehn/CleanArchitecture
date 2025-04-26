@@ -1,5 +1,4 @@
-<script setup>
-import { onMounted, ref } from 'vue'
+<script setup>import { onMounted, ref } from 'vue'
 import { CChart } from '@coreui/vue-chartjs'
 import { getStyle } from '@coreui/utils'
 
@@ -120,8 +119,7 @@ onMounted(() => {
       mainChartRef.value.chart.update()
     }
   })
-})
-</script>
+})</script>
 
 <template>
   <CChart type="line" :data="data" :options="options" ref="mainChartRef" />

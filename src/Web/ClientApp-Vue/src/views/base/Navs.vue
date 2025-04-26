@@ -258,18 +258,15 @@
           <p class="text-body-secondary small">
             If you need responsive nav variations, consider using a series of{'
             '}
-            <a href="https://coreui.io/docs/utilities/flex">flexbox utilities</a
-            >. While more verbose, these utilities offer greater customization
+            <a href="https://coreui.io/docs/utilities/flex">flexbox utilities</a>. While more verbose, these utilities offer greater customization
             across responsive breakpoints. In the example below, our nav will be
             stacked on the lowest breakpoint, then adapt to a horizontal layout
             that fills the available width starting from the small breakpoint.
           </p>
           <DocsExample href="components/nav.html#working-with-flex-utilities">
-            <CNav
-              as="nav"
-              variant="pills"
-              class="flex-column flex-sm-row"
-            >
+            <CNav as="nav"
+                  variant="pills"
+                  class="flex-column flex-sm-row">
               <CNavLink href="#" active> Active </CNavLink>
               <CNavLink href="#">Link</CNavLink>
               <CNavLink href="#">Link</CNavLink>
@@ -291,9 +288,7 @@
                 <CNavLink href="#" active> Active </CNavLink>
               </CNavItem>
               <CDropdown variant="nav-item">
-                <CDropdownToggle color="secondary"
-                  >Dropdown button</CDropdownToggle
-                >
+                <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
                 <CDropdownMenu>
                   <CDropdownItem href="#">Action</CDropdownItem>
                   <CDropdownItem href="#">Another action</CDropdownItem>
@@ -323,9 +318,7 @@
                 <CNavLink href="#" active> Active </CNavLink>
               </CNavItem>
               <CDropdown variant="nav-item">
-                <CDropdownToggle color="secondary"
-                  >Dropdown button</CDropdownToggle
-                >
+                <CDropdownToggle color="secondary">Dropdown button</CDropdownToggle>
                 <CDropdownMenu>
                   <CDropdownItem href="#">Action</CDropdownItem>
                   <CDropdownItem href="#">Another action</CDropdownItem>

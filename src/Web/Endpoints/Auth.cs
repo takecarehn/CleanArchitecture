@@ -2,6 +2,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using CleanArchitecture.Application.Common.Models;
+using CleanArchitecture.Domain.Constants;
+using CleanArchitecture.Infrastructure.Authorization;
 using CleanArchitecture.Infrastructure.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
@@ -18,18 +20,37 @@ public class Auth : EndpointGroupBase
 
         group.MapPost("/login", LoginAsync);
         group.MapPost("/logout", LogoutAsync);
-        group.MapPost("/change-password", ChangePassAsync);
-        group.MapPost("/reset-password", ResetPasssAsync);
+        group.MapPost("/change-password", ChangePassAsync)
+             .RequirePermission(ClaimValues.PermissionUserChangePass);
+        group.MapPost("/reset-password", ResetPasssAsync)
+             .RequirePermission(ClaimValues.PermissionUserResetPass);
     }
 
     private static async Task<Result> LoginAsync(
-       [FromServices] UserManager<ApplicationUser> userManager,
-       [FromServices] RoleManager<IdentityRole> roleManager,
-       [FromServices] IConfiguration configuration,
-       [FromBody] LoginRequest request)
+    [FromServices] SignInManager<ApplicationUser> signInManager,
+    [FromServices] UserManager<ApplicationUser> userManager,
+    [FromServices] RoleManager<IdentityRole> roleManager,
+    [FromServices] IConfiguration configuration,
+    [FromBody] LoginRequest request)
     {
         var user = await userManager.FindByNameAsync(request.Username);
-        if (user == null || !await userManager.CheckPasswordAsync(user, request.Password))
+        if (user == null)
+        {
+            return Result.Failure("Invalid username or password.");
+        }
+
+        var result = await signInManager.PasswordSignInAsync(
+            user,
+            request.Password,
+            isPersistent: false,
+            lockoutOnFailure: true);
+
+        if (result.IsLockedOut)
+        {
+            return Result.Failure("User account is locked. Please try again later.");
+        }
+
+        if (!result.Succeeded)
         {
             return Result.Failure("Invalid username or password.");
         }

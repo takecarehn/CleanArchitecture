@@ -9,11 +9,9 @@
         <CCardBody>
           <DocsExample href="forms/checks-radios.html">
             <CFormCheck id="flexCheckDefault" label="Default checkbox" />
-            <CFormCheck
-              id="flexCheckChecked"
-              label="Checked checkbox"
-              checked
-            />
+            <CFormCheck id="flexCheckChecked"
+                        label="Checked checkbox"
+                        checked />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -48,19 +46,15 @@
             lighter color to help indicate the input&#39;s state.
           </p>
           <DocsExample href="forms/checks-radios.html#radios">
-            <CFormCheck
-              id="flexRadioDefault1"
-              type="radio"
-              name="flexRadioDefault"
-              label="Default radio"
-            />
-            <CFormCheck
-              id="flexRadioDefault2"
-              type="radio"
-              name="flexRadioDefault"
-              label="Checked radio"
-              checked
-            />
+            <CFormCheck id="flexRadioDefault1"
+                        type="radio"
+                        name="flexRadioDefault"
+                        label="Default radio" />
+            <CFormCheck id="flexRadioDefault2"
+                        type="radio"
+                        name="flexRadioDefault"
+                        label="Checked radio"
+                        checked />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -72,21 +66,17 @@
         </CCardHeader>
         <CCardBody>
           <DocsExample href="forms/checks-radios.html#disabled-1">
-            <CFormCheck
-              id="flexRadioDisabled"
-              type="radio"
-              name="flexRadioDisabled"
-              label="Disabled radio"
-              disabled
-            />
-            <CFormCheck
-              id="flexRadioCheckedDisabled"
-              type="radio"
-              name="flexRadioDisabled"
-              label="Disabled checked radio"
-              checked
-              disabled
-            />
+            <CFormCheck id="flexRadioDisabled"
+                        type="radio"
+                        name="flexRadioDisabled"
+                        label="Disabled radio"
+                        disabled />
+            <CFormCheck id="flexRadioCheckedDisabled"
+                        type="radio"
+                        name="flexRadioDisabled"
+                        label="Disabled checked radio"
+                        checked
+                        disabled />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -103,26 +93,18 @@
             Switches also support the <code>disabled</code> attribute.
           </p>
           <DocsExample href="forms/checks-radios.html#switches">
-            <CFormSwitch
-              id="formSwitchCheckDefault"
-              label="Default switch checkbox input"
-            />
-            <CFormSwitch
-              id="formSwitchCheckChecked"
-              label="Checked switch checkbox input"
-              checked
-            />
-            <CFormSwitch
-              id="formSwitchCheckDisabled"
-              label="Disabled switch checkbox input"
-              disabled
-            />
-            <CFormSwitch
-              id="formSwitchCheckCheckedDisabled"
-              label="Disabled checked switch checkbox input"
-              checked
-              disabled
-            />
+            <CFormSwitch id="formSwitchCheckDefault"
+                         label="Default switch checkbox input" />
+            <CFormSwitch id="formSwitchCheckChecked"
+                         label="Checked switch checkbox input"
+                         checked />
+            <CFormSwitch id="formSwitchCheckDisabled"
+                         label="Disabled switch checkbox input"
+                         disabled />
+            <CFormSwitch id="formSwitchCheckCheckedDisabled"
+                         label="Disabled checked switch checkbox input"
+                         checked
+                         disabled />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -134,20 +116,14 @@
         </CCardHeader>
         <CCardBody>
           <DocsExample href="forms/checks-radios.html#sizes">
-            <CFormSwitch
-              id="formSwitchCheckDefault"
-              label="Default switch checkbox input"
-            />
-            <CFormSwitch
-              id="formSwitchCheckDefaultLg"
-              size="lg"
-              label="Large switch checkbox input"
-            />
-            <CFormSwitch
-              id="formSwitchCheckDefaultXL"
-              size="xl"
-              label="Extra large switch checkbox input"
-            />
+            <CFormSwitch id="formSwitchCheckDefault"
+                         label="Default switch checkbox input" />
+            <CFormSwitch id="formSwitchCheckDefaultLg"
+                         size="lg"
+                         label="Large switch checkbox input" />
+            <CFormSwitch id="formSwitchCheckDefaultXL"
+                         size="xl"
+                         label="Extra large switch checkbox input" />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -168,29 +144,23 @@
             <CFormCheck id="defaultCheck2" label="Disabled checkbox" disabled />
           </DocsExample>
           <DocsExample href="forms/checks-radios.html#default-stacked">
-            <CFormCheck
-              id="exampleRadios1"
-              type="radio"
-              name="exampleRadios"
-              value="option1"
-              label="Default radio"
-              checked
-            />
-            <CFormCheck
-              id="exampleRadios2"
-              type="radio"
-              name="exampleRadios"
-              value="option2"
-              label="Second default radio"
-            />
-            <CFormCheck
-              id="exampleRadios3"
-              type="radio"
-              name="exampleRadios"
-              value="option3"
-              label="Disabled radio"
-              disabled
-            />
+            <CFormCheck id="exampleRadios1"
+                        type="radio"
+                        name="exampleRadios"
+                        value="option1"
+                        label="Default radio"
+                        checked />
+            <CFormCheck id="exampleRadios2"
+                        type="radio"
+                        name="exampleRadios"
+                        value="option2"
+                        label="Second default radio" />
+            <CFormCheck id="exampleRadios3"
+                        type="radio"
+                        name="exampleRadios"
+                        value="option3"
+                        label="Disabled radio"
+                        disabled />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -209,40 +179,32 @@
           <DocsExample href="forms/checks-radios.html#inline">
             <CFormCheck id="inlineCheckbox1" inline value="option1" label="1" />
             <CFormCheck id="inlineCheckbox2" inline value="option2" label="2" />
-            <CFormCheck
-              id="inlineCheckbox3"
-              inline
-              value="option3"
-              label="3 (disabled)"
-              disabled
-            />
+            <CFormCheck id="inlineCheckbox3"
+                        inline
+                        value="option3"
+                        label="3 (disabled)"
+                        disabled />
           </DocsExample>
           <DocsExample href="forms/checks-radios.html#inline">
-            <CFormCheck
-              id="inlineCheckbox1"
-              inline
-              type="radio"
-              name="inlineRadioOptions"
-              value="option1"
-              label="1"
-            />
-            <CFormCheck
-              id="inlineCheckbox2"
-              inline
-              type="radio"
-              name="inlineRadioOptions"
-              value="option2"
-              label="2"
-            />
-            <CFormCheck
-              id="inlineCheckbox3"
-              inline
-              type="radio"
-              name="inlineRadioOptions"
-              value="option3"
-              label="3 (disabled)"
-              disabled
-            />
+            <CFormCheck id="inlineCheckbox1"
+                        inline
+                        type="radio"
+                        name="inlineRadioOptions"
+                        value="option1"
+                        label="1" />
+            <CFormCheck id="inlineCheckbox2"
+                        inline
+                        type="radio"
+                        name="inlineRadioOptions"
+                        value="option2"
+                        label="2" />
+            <CFormCheck id="inlineCheckbox3"
+                        inline
+                        type="radio"
+                        name="inlineRadioOptions"
+                        value="option3"
+                        label="3 (disabled)"
+                        disabled />
           </DocsExample>
         </CCardBody>
       </CCard>
@@ -262,13 +224,11 @@
               <CFormCheck id="checkboxNoLabel" value="" aria-label="..." />
             </div>
             <div>
-              <CFormCheck
-                id="radioNoLabel"
-                type="radio"
-                name="radioNoLabel"
-                value=""
-                aria-label="..."
-              />
+              <CFormCheck id="radioNoLabel"
+                          type="radio"
+                          name="radioNoLabel"
+                          value=""
+                          aria-label="..." />
             </div>
           </DocsExample>
         </CCardBody>
@@ -287,67 +247,53 @@
             further be grouped in a button group if needed.
           </p>
           <DocsExample href="forms/checks-radios.html#toggle-buttons">
-            <CFormCheck
-              id="btn-check"
-              :button="{ color: 'primary' }"
-              autocomplete="off"
-              label="Single toggle"
-            />
+            <CFormCheck id="btn-check"
+                        :button="{ color: 'primary' }"
+                        autocomplete="off"
+                        label="Single toggle" />
           </DocsExample>
           <DocsExample href="forms/checks-radios.html#toggle-buttons">
-            <CFormCheck
-              id="btn-check-2"
-              :button="{ color: 'primary' }"
-              autocomplete="off"
-              label="Checked"
-              checked
-            />
+            <CFormCheck id="btn-check-2"
+                        :button="{ color: 'primary' }"
+                        autocomplete="off"
+                        label="Checked"
+                        checked />
           </DocsExample>
           <DocsExample href="forms/checks-radios.html#toggle-buttons">
-            <CFormCheck
-              id="btn-check-3"
-              :button="{ color: 'primary' }"
-              autocomplete="off"
-              label="Disabled"
-              disabled
-            />
+            <CFormCheck id="btn-check-3"
+                        :button="{ color: 'primary' }"
+                        autocomplete="off"
+                        label="Disabled"
+                        disabled />
           </DocsExample>
           <h3>Radio toggle buttons</h3>
           <DocsExample href="forms/checks-radios.html#toggle-buttons">
-            <CFormCheck
-              id="option1"
-              :button="{ color: 'secondary' }"
-              type="radio"
-              name="options"
-              autocomplete="off"
-              label="Checked"
-              checked
-            />
-            <CFormCheck
-              id="option2"
-              :button="{ color: 'secondary' }"
-              type="radio"
-              name="options"
-              autocomplete="off"
-              label="Radio"
-            />
-            <CFormCheck
-              id="option3"
-              :button="{ color: 'secondary' }"
-              type="radio"
-              name="options"
-              autocomplete="off"
-              label="Radio"
-              disabled
-            />
-            <CFormCheck
-              id="option4"
-              :button="{ color: 'secondary' }"
-              type="radio"
-              name="options"
-              autocomplete="off"
-              label="Radio"
-            />
+            <CFormCheck id="option1"
+                        :button="{ color: 'secondary' }"
+                        type="radio"
+                        name="options"
+                        autocomplete="off"
+                        label="Checked"
+                        checked />
+            <CFormCheck id="option2"
+                        :button="{ color: 'secondary' }"
+                        type="radio"
+                        name="options"
+                        autocomplete="off"
+                        label="Radio" />
+            <CFormCheck id="option3"
+                        :button="{ color: 'secondary' }"
+                        type="radio"
+                        name="options"
+                        autocomplete="off"
+                        label="Radio"
+                        disabled />
+            <CFormCheck id="option4"
+                        :button="{ color: 'secondary' }"
+                        type="radio"
+                        name="options"
+                        autocomplete="off"
+                        label="Radio" />
           </DocsExample>
           <h3>Outlined styles</h3>
           <p class="text-body-secondary small">
@@ -356,40 +302,32 @@
           </p>
           <DocsExample href="forms/checks-radios.html#toggle-buttons">
             <div>
-              <CFormCheck
-                id="btn-check-outlined"
-                :button="{ color: 'primary', variant: 'outline' }"
-                autocomplete="off"
-                label="Single toggle"
-              />
+              <CFormCheck id="btn-check-outlined"
+                          :button="{ color: 'primary', variant: 'outline' }"
+                          autocomplete="off"
+                          label="Single toggle" />
             </div>
             <div>
-              <CFormCheck
-                id="btn-check-2-outlined"
-                :button="{ color: 'secondary', variant: 'outline' }"
-                autocomplete="off"
-                label="Checked"
-                checked
-              />
+              <CFormCheck id="btn-check-2-outlined"
+                          :button="{ color: 'secondary', variant: 'outline' }"
+                          autocomplete="off"
+                          label="Checked"
+                          checked />
             </div>
             <div>
-              <CFormCheck
-                id="success-outlined"
-                :button="{ color: 'success', variant: 'outline' }"
-                type="radio"
-                name="options-outlined"
-                autocomplete="off"
-                label="Radio"
-                checked
-              />
-              <CFormCheck
-                id="danger-outlined"
-                :button="{ color: 'danger', variant: 'outline' }"
-                type="radio"
-                name="options-outlined"
-                autocomplete="off"
-                label="Radio"
-              />
+              <CFormCheck id="success-outlined"
+                          :button="{ color: 'success', variant: 'outline' }"
+                          type="radio"
+                          name="options-outlined"
+                          autocomplete="off"
+                          label="Radio"
+                          checked />
+              <CFormCheck id="danger-outlined"
+                          :button="{ color: 'danger', variant: 'outline' }"
+                          type="radio"
+                          name="options-outlined"
+                          autocomplete="off"
+                          label="Radio" />
             </div>
           </DocsExample>
         </CCardBody>

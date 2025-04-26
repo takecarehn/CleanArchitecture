@@ -1,13 +1,11 @@
-<script setup>
-const toasts = []
+<script setup>const toasts = []
 
 const createToast = () => {
   toasts.push({
     title: 'new toast',
     content: 'Lorem ipsum dolor cet emit',
   })
-}
-</script>
+}</script>
 
 <template>
   <CRow>
@@ -24,15 +22,13 @@ const createToast = () => {
           <DocsExample href="components/toast.html">
             <CToast title="CoreUI for Vue.js" :autohide="false" :visible="true">
               <CToastHeader closeButton>
-                <svg
-                  class="rounded me-2"
-                  width="20"
-                  height="20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                >
+                <svg class="rounded me-2"
+                     width="20"
+                     height="20"
+                     xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice"
+                     focusable="false"
+                     role="img">
                   <rect width="100%" height="100%" fill="#007aff"></rect>
                 </svg>
                 <strong class="me-auto">CoreUI for Vue.js</strong>
@@ -68,15 +64,13 @@ const createToast = () => {
           <DocsExample href="components/toast.html#translucent" tabContentClass="bg-dark">
             <CToast title="CoreUI for Vue.js" :autohide="false" :visible="true">
               <CToastHeader closeButton>
-                <svg
-                  class="rounded me-2"
-                  width="20"
-                  height="20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                  role="img"
-                >
+                <svg class="rounded me-2"
+                     width="20"
+                     height="20"
+                     xmlns="http://www.w3.org/2000/svg"
+                     preserveAspectRatio="xMidYMid slice"
+                     focusable="false"
+                     role="img">
                   <rect width="100%" height="100%" fill="#007aff"></rect>
                 </svg>
                 <strong class="me-auto">CoreUI for Vue.js</strong>
@@ -100,15 +94,13 @@ const createToast = () => {
             <CToaster class="position-static">
               <CToast title="CoreUI for Vue.js" :autohide="false" :visible="true">
                 <CToastHeader closeButton>
-                  <svg
-                    class="rounded me-2"
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                    role="img"
-                  >
+                  <svg class="rounded me-2"
+                       width="20"
+                       height="20"
+                       xmlns="http://www.w3.org/2000/svg"
+                       preserveAspectRatio="xMidYMid slice"
+                       focusable="false"
+                       role="img">
                     <rect width="100%" height="100%" fill="#007aff"></rect>
                   </svg>
                   <strong class="me-auto">CoreUI for Vue.js</strong>
@@ -118,15 +110,13 @@ const createToast = () => {
               </CToast>
               <CToast title="CoreUI for Vue.js" :autohide="false" :visible="true">
                 <CToastHeader closeButton>
-                  <svg
-                    class="rounded me-2"
-                    width="20"
-                    height="20"
-                    xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                    role="img"
-                  >
+                  <svg class="rounded me-2"
+                       width="20"
+                       height="20"
+                       xmlns="http://www.w3.org/2000/svg"
+                       preserveAspectRatio="xMidYMid slice"
+                       focusable="false"
+                       role="img">
                     <rect width="100%" height="100%" fill="#007aff"></rect>
                   </svg>
                   <strong class="me-auto">CoreUI for Vue.js</strong>
@@ -169,9 +159,7 @@ const createToast = () => {
                 Hello, world! This is a toast message.
                 <div class="mt-2 pt-2 border-top">
                   <CButton type="button" color="primary" size="sm"> Take action </CButton>
-                  <CToastClose as="CButton" color="secondary" size="sm" class="ms-1"
-                    >Close</CToastClose
-                  >
+                  <CToastClose as="CButton" color="secondary" size="sm" class="ms-1">Close</CToastClose>
                 </div>
               </CToastBody>
             </CToast>
@@ -193,12 +181,10 @@ const createToast = () => {
             border with <code>.border-0</code>.
           </p>
           <DocsExample href="components/toast.html#color-schemes">
-            <CToast
-              :autohide="false"
-              color="primary"
-              class="text-white align-items-center"
-              :visible="true"
-            >
+            <CToast :autohide="false"
+                    color="primary"
+                    class="text-white align-items-center"
+                    :visible="true">
               <div class="d-flex">
                 <CToastBody>Hello, world! This is a toast message.</CToastBody>
                 <CToastClose class="me-2 m-auto" white />

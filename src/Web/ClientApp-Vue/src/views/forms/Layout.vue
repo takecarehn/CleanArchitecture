@@ -33,9 +33,7 @@
         <CCardBody>
           <p class="text-body-secondary small">
             By adding
-            <a href="https://coreui.io/docs/layout/gutters/"
-              >gutter modifier classes</a
-            >
+            <a href="https://coreui.io/docs/layout/gutters/">gutter modifier classes</a>
             , you can have control over the gutter width in as well the inline
             as block direction.
           </p>
@@ -68,10 +66,8 @@
               </CCol>
               <CCol :xs="12">
                 <CFormLabel for="inputAddress2">Address 2</CFormLabel>
-                <CFormInput
-                  id="inputAddress2"
-                  placeholder="Apartment, studio, or floor"
-                />
+                <CFormInput id="inputAddress2"
+                            placeholder="Apartment, studio, or floor" />
               </CCol>
               <CCol :md="6">
                 <CFormLabel for="inputCity">City</CFormLabel>
@@ -89,11 +85,9 @@
                 <CFormInput id="inputZip" />
               </CCol>
               <CCol :xs="12">
-                <CFormCheck
-                  id="gridCheck"
-                  type="checkbox"
-                  label="Check me out"
-                />
+                <CFormCheck id="gridCheck"
+                            type="checkbox"
+                            label="Check me out" />
               </CCol>
               <CCol :xs="12">
                 <CButton type="submit" color="primary">Sign in</CButton>
@@ -134,10 +128,8 @@
                 </CCol>
               </CRow>
               <CRow class="mb-3">
-                <CFormLabel
-                  for="inputPassword3"
-                  class="col-sm-2 col-form-label"
-                >
+                <CFormLabel for="inputPassword3"
+                            class="col-sm-2 col-form-label">
                   Password
                 </CFormLabel>
                 <CCol :sm="10">
@@ -147,38 +139,30 @@
               <fieldset class="row mb-3">
                 <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
                 <CCol :sm="10">
-                  <CFormCheck
-                    id="gridRadios1"
-                    type="radio"
-                    name="gridRadios"
-                    value="option1"
-                    label="First radio"
-                    checked
-                  />
-                  <CFormCheck
-                    id="gridRadios2"
-                    type="radio"
-                    name="gridRadios"
-                    value="option2"
-                    label="Second radio"
-                  />
-                  <CFormCheck
-                    id="gridRadios3"
-                    type="radio"
-                    name="gridRadios"
-                    value="option3"
-                    label="Third disabled radio"
-                    disabled
-                  />
+                  <CFormCheck id="gridRadios1"
+                              type="radio"
+                              name="gridRadios"
+                              value="option1"
+                              label="First radio"
+                              checked />
+                  <CFormCheck id="gridRadios2"
+                              type="radio"
+                              name="gridRadios"
+                              value="option2"
+                              label="Second radio" />
+                  <CFormCheck id="gridRadios3"
+                              type="radio"
+                              name="gridRadios"
+                              value="option3"
+                              label="Third disabled radio"
+                              disabled />
                 </CCol>
               </fieldset>
               <CRow class="mb-3">
                 <div class="col-sm-10 offset-sm-2">
-                  <CFormCheck
-                    id="gridCheck1"
-                    type="checkbox"
-                    label="Example checkbox"
-                  />
+                  <CFormCheck id="gridCheck1"
+                              type="checkbox"
+                              label="Example checkbox" />
                 </div>
               </CRow>
               <CButton type="submit" color="primary">Sign in</CButton>
@@ -202,19 +186,15 @@
           </p>
           <DocsExample href="forms/layout.html#horizontal-form-label-sizing">
             <CRow class="mb-3">
-              <CFormLabel
-                for="colFormLabelSm"
-                class="col-sm-2 col-form-label col-form-label-sm"
-              >
+              <CFormLabel for="colFormLabelSm"
+                          class="col-sm-2 col-form-label col-form-label-sm">
                 Email
               </CFormLabel>
               <CCol :sm="10">
-                <CFormInput
-                  id="colFormLabelSm"
-                  type="email"
-                  class="form-control form-control-sm"
-                  placeholder="col-form-label-sm"
-                />
+                <CFormInput id="colFormLabelSm"
+                            type="email"
+                            class="form-control form-control-sm"
+                            placeholder="col-form-label-sm" />
               </CCol>
             </CRow>
             <CRow class="mb-3">
@@ -222,27 +202,21 @@
                 Email
               </CFormLabel>
               <CCol :sm="10">
-                <CFormInput
-                  id="colFormLabel"
-                  type="email"
-                  placeholder="col-form-label"
-                />
+                <CFormInput id="colFormLabel"
+                            type="email"
+                            placeholder="col-form-label" />
               </CCol>
             </CRow>
             <CRow>
-              <CFormLabel
-                for="colFormLabelLg"
-                class="col-sm-2 col-form-label col-form-label-lg"
-              >
+              <CFormLabel for="colFormLabelLg"
+                          class="col-sm-2 col-form-label col-form-label-lg">
                 Email
               </CFormLabel>
               <CCol :sm="10">
-                <CFormInput
-                  id="colFormLabelLg"
-                  type="email"
-                  class="form-control form-control-lg"
-                  placeholder="col-form-label-lg"
-                />
+                <CFormInput id="colFormLabelLg"
+                            type="email"
+                            class="form-control form-control-lg"
+                            placeholder="col-form-label-lg" />
               </CCol>
             </CRow>
           </DocsExample>
@@ -309,10 +283,8 @@
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
-                  <CFormInput
-                    id="autoSizingInputGroup"
-                    placeholder="Username"
-                  />
+                  <CFormInput id="autoSizingInputGroup"
+                              placeholder="Username" />
                 </CInputGroup>
               </CCol>
               <CCol xs="auto">
@@ -327,11 +299,9 @@
                 </CFormSelect>
               </CCol>
               <CCol xs="auto">
-                <CFormCheck
-                  id="autoSizingCheck"
-                  type="checkbox"
-                  label="Remember me"
-                />
+                <CFormCheck id="autoSizingCheck"
+                            type="checkbox"
+                            label="Remember me" />
               </CCol>
               <CCol xs="auto">
                 <CButton type="submit" color="primary">Submit</CButton>
@@ -351,18 +321,14 @@
                 <CFormInput id="specificSizeInputName" placeholder="Jane Doe" />
               </CCol>
               <CCol :sm="3">
-                <CFormLabel
-                  class="visually-hidden"
-                  for="specificSizeInputGroupUsername"
-                >
+                <CFormLabel class="visually-hidden"
+                            for="specificSizeInputGroupUsername">
                   Username
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
-                  <CFormInput
-                    id="specificSizeInputGroupUsername"
-                    placeholder="Username"
-                  />
+                  <CFormInput id="specificSizeInputGroupUsername"
+                              placeholder="Username" />
                 </CInputGroup>
               </CCol>
               <CCol :sm="3">
@@ -377,11 +343,9 @@
                 </CFormSelect>
               </CCol>
               <CCol xs="auto">
-                <CFormCheck
-                  id="autoSizingCheck2"
-                  type="checkbox"
-                  label="Remember me"
-                />
+                <CFormCheck id="autoSizingCheck2"
+                            type="checkbox"
+                            label="Remember me" />
               </CCol>
               <CCol xs="auto">
                 <CButton type="submit" color="primary">Submit</CButton>
@@ -400,27 +364,21 @@
           <p class="text-body-secondary small">
             Use the <code>&lt;CCol xs=&#34;auto&#34;&gt;</code> class to create
             horizontal layouts. By adding
-            <a href="https://coreui.io/docs/layout/gutters/"
-              >gutter modifier classes</a
-            >, we will have gutters in horizontal and vertical directions. The
+            <a href="https://coreui.io/docs/layout/gutters/">gutter modifier classes</a>, we will have gutters in horizontal and vertical directions. The
             <code>.align-items-center</code> aligns the form elements to the
             middle, making the <code>&lt;CFormCheck&gt;</code> align properly.
           </p>
           <DocsExample href="forms/layout.html#inline-forms">
             <CForm class="row row-cols-lg-auto g-3 align-items-center">
               <CCol :xs="12">
-                <CFormLabel
-                  class="visually-hidden"
-                  for="inlineFormInputGroupUsername"
-                >
+                <CFormLabel class="visually-hidden"
+                            for="inlineFormInputGroupUsername">
                   Username
                 </CFormLabel>
                 <CInputGroup>
                   <CInputGroupText>@</CInputGroupText>
-                  <CFormInput
-                    id="inlineFormInputGroupUsername"
-                    placeholder="Username"
-                  />
+                  <CFormInput id="inlineFormInputGroupUsername"
+                              placeholder="Username" />
                 </CInputGroup>
               </CCol>
               <CCol :xs="12">
@@ -435,11 +393,9 @@
                 </CFormSelect>
               </CCol>
               <CCol :xs="12">
-                <CFormCheck
-                  id="inlineFormCheck"
-                  type="checkbox"
-                  label="Remember me"
-                />
+                <CFormCheck id="inlineFormCheck"
+                            type="checkbox"
+                            label="Remember me" />
               </CCol>
               <CCol :xs="12">
                 <CButton type="submit" color="primary">Submit</CButton>

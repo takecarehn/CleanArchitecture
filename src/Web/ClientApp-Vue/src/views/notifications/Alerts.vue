@@ -1,8 +1,6 @@
-<script setup>
-const alert = () => {
+<script setup>const alert = () => {
   console.log('👋 Well, hi there! Thanks for dismissing me.')
-}
-</script>
+}</script>
 
 <template>
   <CRow>
@@ -18,27 +16,17 @@ const alert = () => {
             close button. For a styling, use one of the
             <strong>required</strong> contextual <code>color</code> props (e.g.,
             <code>primary</code>). For inline dismissal, use the
-            <a
-              href="https://coreui.io/vue/docs/components/alert.html#dismissing"
-            >
+            <a href="https://coreui.io/vue/docs/components/alert.html#dismissing">
               dismissing prop
             </a>
             .
           </p>
           <DocsExample href="components/alert.html">
-            <CAlert color="primary"
-              >A simple primary alert—check it out!</CAlert
-            >
-            <CAlert color="secondary"
-              >A simple secondary alert—check it out!</CAlert
-            >
-            <CAlert color="success"
-              >A simple success alert—check it out!</CAlert
-            >
+            <CAlert color="primary">A simple primary alert—check it out!</CAlert>
+            <CAlert color="secondary">A simple secondary alert—check it out!</CAlert>
+            <CAlert color="success">A simple success alert—check it out!</CAlert>
             <CAlert color="danger">A simple danger alert—check it out!</CAlert>
-            <CAlert color="warning"
-              >A simple warning alert—check it out!</CAlert
-            >
+            <CAlert color="warning">A simple warning alert—check it out!</CAlert>
             <CAlert color="info">A simple info alert—check it out!</CAlert>
             <CAlert color="light">A simple light alert—check it out!</CAlert>
             <CAlert color="dark">A simple dark alert—check it out!</CAlert>

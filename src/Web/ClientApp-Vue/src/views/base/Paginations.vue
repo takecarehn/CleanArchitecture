@@ -83,9 +83,7 @@
             disabled links and use custom JavaScript to fully disable their
             functionality.
           </p>
-          <DocsExample
-            href="components/pagination.html#disabled-and-active-states"
-          >
+          <DocsExample href="components/pagination.html#disabled-and-active-states">
             <CPagination aria-label="Page navigation example">
               <CPaginationItem aria-label="Previous" disabled>
                 <span aria-hidden="true">&laquo;</span>
@@ -141,15 +139,11 @@
         <CCardBody>
           <p class="text-body-secondary small">
             Change the alignment of pagination components with
-            <a href="https://coreui.io/docs/utilities/flex/"
-              >flexbox utilities</a
-            >.
+            <a href="https://coreui.io/docs/utilities/flex/">flexbox utilities</a>.
           </p>
           <DocsExample href="components/pagination.html#aligment">
-            <CPagination
-              class="justify-content-center"
-              aria-label="Page navigation example"
-            >
+            <CPagination class="justify-content-center"
+                         aria-label="Page navigation example">
               <CPaginationItem disabled>Previous</CPaginationItem>
               <CPaginationItem>1</CPaginationItem>
               <CPaginationItem>2</CPaginationItem>
@@ -158,10 +152,8 @@
             </CPagination>
           </DocsExample>
           <DocsExample href="components/pagination.html#aligment">
-            <CPagination
-              class="justify-content-end"
-              aria-label="Page navigation example"
-            >
+            <CPagination class="justify-content-end"
+                         aria-label="Page navigation example">
               <CPaginationItem disabled>Previous</CPaginationItem>
               <CPaginationItem>1</CPaginationItem>
               <CPaginationItem>2</CPaginationItem>

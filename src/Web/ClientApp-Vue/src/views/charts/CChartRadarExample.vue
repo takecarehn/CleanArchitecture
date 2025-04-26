@@ -2,8 +2,7 @@
   <CChartRadar :data="data" />
 </template>
 
-<script setup>
-import { CChartRadar } from '@coreui/vue-chartjs'
+<script setup>import { CChartRadar } from '@coreui/vue-chartjs'
 
 const data = {
   labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
@@ -34,5 +33,4 @@ const data = {
   options: {
     aspectRatio: 1.5,
   },
-}
-</script>
+}</script>

@@ -15,4 +15,8 @@ public interface IIdentityService
     Task<Result> DeleteUserAsync(string userId);
 
     Task<IList<string>> GetUserPermissionsAsync(string userId);
+
+    Task<Result> LockUserAsync(string userId);
+
+    Task<Result> UnlockUserAsync(string userId);
 }

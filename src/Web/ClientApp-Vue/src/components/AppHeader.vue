@@ -1,5 +1,4 @@
-<script setup>
-import { onMounted, ref } from 'vue'
+<script setup>import { onMounted, ref } from 'vue'
 import { useColorModes } from '@coreui/vue'
 
 import AppBreadcrumb from '@/components/AppBreadcrumb.vue'
@@ -18,8 +17,7 @@ onMounted(() => {
       headerClassNames.value = 'mb-4 p-0'
     }
   })
-})
-</script>
+})</script>
 
 <template>
   <CHeader position="sticky" :class="headerClassNames">
@@ -66,31 +64,25 @@ onMounted(() => {
             <CIcon v-else icon="cil-contrast" size="lg" />
           </CDropdownToggle>
           <CDropdownMenu>
-            <CDropdownItem
-              :active="colorMode === 'light'"
-              class="d-flex align-items-center"
-              component="button"
-              type="button"
-              @click="setColorMode('light')"
-            >
+            <CDropdownItem :active="colorMode === 'light'"
+                           class="d-flex align-items-center"
+                           component="button"
+                           type="button"
+                           @click="setColorMode('light')">
               <CIcon class="me-2" icon="cil-sun" size="lg" /> Light
             </CDropdownItem>
-            <CDropdownItem
-              :active="colorMode === 'dark'"
-              class="d-flex align-items-center"
-              component="button"
-              type="button"
-              @click="setColorMode('dark')"
-            >
+            <CDropdownItem :active="colorMode === 'dark'"
+                           class="d-flex align-items-center"
+                           component="button"
+                           type="button"
+                           @click="setColorMode('dark')">
               <CIcon class="me-2" icon="cil-moon" size="lg" /> Dark
             </CDropdownItem>
-            <CDropdownItem
-              :active="colorMode === 'auto'"
-              class="d-flex align-items-center"
-              component="button"
-              type="button"
-              @click="setColorMode('auto')"
-            >
+            <CDropdownItem :active="colorMode === 'auto'"
+                           class="d-flex align-items-center"
+                           component="button"
+                           type="button"
+                           @click="setColorMode('auto')">
               <CIcon class="me-2" icon="cil-contrast" size="lg" /> Auto
             </CDropdownItem>
           </CDropdownMenu>

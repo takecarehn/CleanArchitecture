@@ -1,5 +1,4 @@
-<script setup>
-import { CChartDoughnut } from '@coreui/vue-chartjs'
+<script setup>import { CChartDoughnut } from '@coreui/vue-chartjs'
 
 const data = {
   labels: ['VueJs', 'EmberJs', 'VueJs', 'AngularJs'],
@@ -9,8 +8,7 @@ const data = {
       data: [40, 20, 80, 10],
     },
   ],
-}
-</script>
+}</script>
 
 <template>
   <CChartDoughnut :data="data" />

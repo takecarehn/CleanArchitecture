@@ -1,8 +1,6 @@
-<script setup>
-import avatar from '@/assets/images/avatars/8.jpg'
+<script setup>import avatar from '@/assets/images/avatars/8.jpg'
 
-const itemsCount = 42
-</script>
+const itemsCount = 42</script>
 
 <template>
   <CDropdown placement="bottom-end" variant="nav-item">
@@ -10,10 +8,8 @@ const itemsCount = 42
       <CAvatar :src="avatar" size="md" />
     </CDropdownToggle>
     <CDropdownMenu class="pt-0">
-      <CDropdownHeader
-        component="h6"
-        class="bg-body-secondary text-body-secondary fw-semibold mb-2 rounded-top"
-      >
+      <CDropdownHeader component="h6"
+                       class="bg-body-secondary text-body-secondary fw-semibold mb-2 rounded-top">
         Account
       </CDropdownHeader>
       <CDropdownItem>
@@ -32,10 +28,8 @@ const itemsCount = 42
         <CIcon icon="cil-comment-square" /> Comments
         <CBadge color="warning" class="ms-auto">{{ itemsCount }}</CBadge>
       </CDropdownItem>
-      <CDropdownHeader
-        component="h6"
-        class="bg-body-secondary text-body-secondary fw-semibold my-2"
-      >
+      <CDropdownHeader component="h6"
+                       class="bg-body-secondary text-body-secondary fw-semibold my-2">
         Settings
       </CDropdownHeader>
       <CDropdownItem> <CIcon icon="cil-user" /> Profile </CDropdownItem>

@@ -16,30 +16,30 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NavMenuComponent,
-        HomeComponent,
-        CounterComponent,
-        FetchDataComponent,
-        TodoComponent
-    ],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        RouterModule.forRoot([
-            { path: '', component: HomeComponent, pathMatch: 'full' },
-            { path: 'counter', component: CounterComponent },
-            { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'todo', component: TodoComponent }
-        ]),
-        BrowserAnimationsModule,
-        ModalModule.forRoot()],
-    providers: [
-        { provide: APP_ID, useValue: 'ng-cli-universal' },
-        { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
-        provideHttpClient(withInterceptorsFromDi())
-    ]
+  declarations: [
+    AppComponent,
+    NavMenuComponent,
+    HomeComponent,
+    CounterComponent,
+    FetchDataComponent,
+    TodoComponent
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'counter', component: CounterComponent },
+      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'todo', component: TodoComponent }
+    ]),
+    BrowserAnimationsModule,
+    ModalModule.forRoot()],
+  providers: [
+    { provide: APP_ID, useValue: 'ng-cli-universal' },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
+    provideHttpClient(withInterceptorsFromDi())
+  ]
 })
 export class AppModule { }

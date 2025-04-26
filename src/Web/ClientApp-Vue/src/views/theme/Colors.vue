@@ -1,6 +1,4 @@
-<script setup>
-import ColorTheme from './ColorTheme.vue'
-</script>
+<script setup>import ColorTheme from './ColorTheme.vue'</script>
 
 <template>
   <CRow>

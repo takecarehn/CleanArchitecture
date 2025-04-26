@@ -25,6 +25,9 @@ public static class WebApplicationExtensions
 
         foreach (var type in endpointGroupTypes)
         {
+#if DEBUG
+            Console.WriteLine($"Mapping Endpoint Group: {type.Name}");
+#endif
             if (Activator.CreateInstance(type) is EndpointGroupBase instance)
             {
                 instance.Map(app);

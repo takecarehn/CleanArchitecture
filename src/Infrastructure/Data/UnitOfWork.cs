@@ -41,5 +41,4 @@ namespace CleanArchitecture.Infrastructure.Data
             return await _context.SaveChangesAsync(cancellationToken);
         }
     }
-
 }

@@ -67,13 +67,11 @@
           </p>
           <DocsExample href="forms/range.html#steps">
             <CFormLabel for="customRange3">Example range</CFormLabel>
-            <CFormRange
-              id="customRange3"
-              :min="0"
-              :max="5"
-              :step="0.5"
-              :value="3"
-            />
+            <CFormRange id="customRange3"
+                        :min="0"
+                        :max="5"
+                        :step="0.5"
+                        :value="3" />
           </DocsExample>
         </CCardBody>
       </CCard>

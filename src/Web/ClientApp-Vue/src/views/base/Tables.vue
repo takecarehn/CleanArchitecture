@@ -685,9 +685,7 @@
                     This cell inherits <code>vertical-align: middle;</code> from
                     the table
                   </CTableDataCell>
-                  <CTableDataCell align="top"
-                    >This cell is aligned to the top.</CTableDataCell
-                  >
+                  <CTableDataCell align="top">This cell is aligned to the top.</CTableDataCell>
                   <CTableDataCell>
                     This here is some placeholder text, intended to take up
                     quite a bit of vertical space, to demonsCTableRowate how the
@@ -732,15 +730,9 @@
                     <CTable>
                       <CTableHead>
                         <CTableRow>
-                          <CTableHeaderCell scope="col"
-                            >Header</CTableHeaderCell
-                          >
-                          <CTableHeaderCell scope="col"
-                            >Header</CTableHeaderCell
-                          >
-                          <CTableHeaderCell scope="col"
-                            >Header</CTableHeaderCell
-                          >
+                          <CTableHeaderCell scope="col">Header</CTableHeaderCell>
+                          <CTableHeaderCell scope="col">Header</CTableHeaderCell>
+                          <CTableHeaderCell scope="col">Header</CTableHeaderCell>
                         </CTableRow>
                       </CTableHead>
                       <CTableBody>

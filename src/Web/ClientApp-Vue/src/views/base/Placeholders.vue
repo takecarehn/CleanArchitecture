@@ -1,6 +1,4 @@
-<script setup>
-import VueImg from '@/assets/images/vue.jpg'
-</script>
+<script setup>import VueImg from '@/assets/images/vue.jpg'</script>
 
 <template>
   <CRow>
@@ -30,18 +28,15 @@ import VueImg from '@/assets/images/vue.jpg'
                 </CCardBody>
               </CCard>
               <CCard style="width: 18rem">
-                <CCardImage
-                  as="svg"
-                  orientation="top"
-                  width="100%"
-                  height="162"
-                  role="img"
-                  aria-label="Placeholder"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title
-                  ><rect width="100%" height="100%" fill="#868e96"></rect>
+                <CCardImage as="svg"
+                            orientation="top"
+                            width="100%"
+                            height="162"
+                            role="img"
+                            aria-label="Placeholder"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false">
+                  <title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect>
                 </CCardImage>
                 <CCardBody>
                   <CCardTitle v-c-placeholder="{ animation: 'glow', xs: 7 }">
@@ -54,14 +49,12 @@ import VueImg from '@/assets/images/vue.jpg'
                     <CPlaceholder :xs="6" />
                     <CPlaceholder :xs="8" />
                   </CCardText>
-                  <CButton
-                    v-c-placeholder="{ xs: 6 }"
-                    color="primary"
-                    aria-hidden="true"
-                    disabled
-                    href="#"
-                    tabindex="-1"
-                  ></CButton>
+                  <CButton v-c-placeholder="{ xs: 6 }"
+                           color="primary"
+                           aria-hidden="true"
+                           disabled
+                           href="#"
+                           tabindex="-1"></CButton>
                 </CCardBody>
               </CCard>
             </div>
@@ -84,14 +77,12 @@ import VueImg from '@/assets/images/vue.jpg'
             <p aria-hidden="true">
               <CPlaceholder :xs="6" />
             </p>
-            <CButton
-              v-c-placeholder="{ xs: 4 }"
-              color="primary"
-              aria-hidden="true"
-              disabled
-              href="#"
-              tabindex="-1"
-            ></CButton>
+            <CButton v-c-placeholder="{ xs: 4 }"
+                     color="primary"
+                     aria-hidden="true"
+                     disabled
+                     href="#"
+                     tabindex="-1"></CButton>
           </DocsExample>
         </CCardBody>
       </CCard>

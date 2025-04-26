@@ -6,6 +6,7 @@ using Microsoft.Data.SqlClient;
 using static Dapper.SqlMapper;
 
 namespace CleanArchitecture.Infrastructure.Data;
+
 public class DapperService : IDapperService
 {
     private readonly DynamicParameterMap dynamicParameterMap = new DynamicParameterMap();

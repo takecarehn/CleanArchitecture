@@ -101,20 +101,16 @@
           </DocsExample>
           <DocsExample href="components/spinner.html#buttons">
             <CButton disabled>
-              <CSpinner
-                as="span"
-                size="sm"
-                variant="grow"
-                aria-hidden="true"
-              />
+              <CSpinner as="span"
+                        size="sm"
+                        variant="grow"
+                        aria-hidden="true" />
             </CButton>
             <CButton disabled>
-              <CSpinner
-                as="span"
-                size="sm"
-                variant="grow"
-                aria-hidden="true"
-              />
+              <CSpinner as="span"
+                        size="sm"
+                        variant="grow"
+                        aria-hidden="true" />
               Loading...
             </CButton>
           </DocsExample>

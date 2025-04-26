@@ -1,5 +1,4 @@
-<script setup>
-import { CChartPolarArea } from '@coreui/vue-chartjs'
+<script setup>import { CChartPolarArea } from '@coreui/vue-chartjs'
 
 const data = {
   labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
@@ -26,8 +25,7 @@ const data = {
   options: {
     aspectRatio: 1.5,
   },
-}
-</script>
+}</script>
 
 <template>
   <CChartPolarArea :data="data" />

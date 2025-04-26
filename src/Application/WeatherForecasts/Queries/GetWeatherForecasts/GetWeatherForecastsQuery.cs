@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.WeatherForecasts.Queries.GetWeatherForecasts;
 
@@ -8,6 +7,7 @@ public record GetWeatherForecastsQuery : IRequest<IEnumerable<WeatherForecast>>;
 public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecast>>
 {
     private readonly ILogger<GetWeatherForecastsQueryHandler> _logger;
+
     public GetWeatherForecastsQueryHandler(ILogger<GetWeatherForecastsQueryHandler> logger)
     {
         this._logger = logger;
@@ -19,6 +19,7 @@ public class GetWeatherForecastsQueryHandler : IRequestHandler<GetWeatherForecas
     };
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+
     public async Task<IEnumerable<WeatherForecast>> Handle(GetWeatherForecastsQuery request, CancellationToken cancellationToken)
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
     {

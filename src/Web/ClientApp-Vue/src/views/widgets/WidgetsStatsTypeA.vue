@@ -1,5 +1,4 @@
-<script setup>
-import { onMounted, ref } from 'vue'
+<script setup>import { onMounted, ref } from 'vue'
 import { CChart } from '@coreui/vue-chartjs'
 import { getStyle } from '@coreui/utils'
 
@@ -18,18 +17,19 @@ onMounted(() => {
       widgetChartRef2.value.chart.update()
     }
   })
-})
-</script>
+})</script>
 
 <template>
   <CRow :xs="{ gutter: 4 }">
     <CCol :sm="6" :xl="4" :xxl="3">
       <CWidgetStatsA color="primary">
-        <template #value
-          >26K
+        <template #value>
+          26K
           <span class="fs-6 fw-normal"> (-12.4% <CIcon icon="cil-arrow-bottom" />) </span>
         </template>
-        <template #title>Users</template>
+        <template #title>
+          Users
+        </template>
         <template #action>
           <CDropdown placement="bottom-end">
             <CDropdownToggle color="transparent" class="p-0 text-white" :caret="false">
@@ -43,12 +43,11 @@ onMounted(() => {
           </CDropdown>
         </template>
         <template #chart>
-          <CChart
-            type="line"
-            class="mt-3 mx-3"
-            style="height: 70px"
-            ref="widgetChartRef1"
-            :data="{
+          <CChart type="line"
+                  class="mt-3 mx-3"
+                  style="height: 70px"
+                  ref="widgetChartRef1"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -60,7 +59,7 @@ onMounted(() => {
                 },
               ],
             }"
-            :options="{
+                  :options="{
               plugins: {
                 legend: {
                   display: false,
@@ -102,18 +101,19 @@ onMounted(() => {
                   hoverRadius: 4,
                 },
               },
-            }"
-          />
+            }" />
         </template>
       </CWidgetStatsA>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
       <CWidgetStatsA color="info">
-        <template #value
-          >$6.200
+        <template #value>
+          $6.200
           <span class="fs-6 fw-normal"> (40.9% <CIcon icon="cil-arrow-top" />) </span>
         </template>
-        <template #title>Income</template>
+        <template #title>
+          Income
+        </template>
         <template #action>
           <CDropdown placement="bottom-end">
             <CDropdownToggle color="transparent" class="p-0 text-white" :caret="false">
@@ -127,12 +127,11 @@ onMounted(() => {
           </CDropdown>
         </template>
         <template #chart>
-          <CChart
-            type="line"
-            class="mt-3 mx-3"
-            style="height: 70px"
-            ref="widgetChartRef2"
-            :data="{
+          <CChart type="line"
+                  class="mt-3 mx-3"
+                  style="height: 70px"
+                  ref="widgetChartRef2"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -144,7 +143,7 @@ onMounted(() => {
                 },
               ],
             }"
-            :options="{
+                  :options="{
               plugins: {
                 legend: {
                   display: false,
@@ -185,18 +184,19 @@ onMounted(() => {
                   hoverRadius: 4,
                 },
               },
-            }"
-          />
+            }" />
         </template>
       </CWidgetStatsA>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
       <CWidgetStatsA color="warning">
-        <template #value
-          >2.49%
+        <template #value>
+          2.49%
           <span class="fs-6 fw-normal"> (84.7% <CIcon icon="cil-arrow-top" />) </span>
         </template>
-        <template #title>Conversion Rate</template>
+        <template #title>
+          Conversion Rate
+        </template>
         <template #action>
           <CDropdown placement="bottom-end">
             <CDropdownToggle color="transparent" class="p-0 text-white" :caret="false">
@@ -210,11 +210,10 @@ onMounted(() => {
           </CDropdown>
         </template>
         <template #chart>
-          <CChart
-            type="line"
-            class="mt-3"
-            style="height: 70px"
-            :data="{
+          <CChart type="line"
+                  class="mt-3"
+                  style="height: 70px"
+                  :data="{
               labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
               datasets: [
                 {
@@ -226,7 +225,7 @@ onMounted(() => {
                 },
               ],
             }"
-            :options="{
+                  :options="{
               plugins: {
                 legend: {
                   display: false,
@@ -255,18 +254,19 @@ onMounted(() => {
                   hoverRadius: 4,
                 },
               },
-            }"
-          />
+            }" />
         </template>
       </CWidgetStatsA>
     </CCol>
     <CCol :sm="6" :xl="4" :xxl="3">
       <CWidgetStatsA color="danger">
-        <template #value
-          >44K
+        <template #value>
+          44K
           <span class="fs-6 fw-normal"> (-23.6% <CIcon icon="cil-arrow-bottom" />) </span>
         </template>
-        <template #title>Sessions</template>
+        <template #title>
+          Sessions
+        </template>
         <template #action>
           <CDropdown placement="bottom-end">
             <CDropdownToggle color="transparent" class="p-0 text-white" :caret="false">
@@ -280,11 +280,10 @@ onMounted(() => {
           </CDropdown>
         </template>
         <template #chart>
-          <CChart
-            type="bar"
-            class="mt-3 mx-3"
-            style="height: 70px"
-            :data="{
+          <CChart type="bar"
+                  class="mt-3 mx-3"
+                  style="height: 70px"
+                  :data="{
               labels: [
                 'January',
                 'February',
@@ -313,7 +312,7 @@ onMounted(() => {
                 },
               ],
             }"
-            :options="{
+                  :options="{
               maintainAspectRatio: false,
               plugins: {
                 legend: {
@@ -343,8 +342,7 @@ onMounted(() => {
                   },
                 },
               },
-            }"
-          />
+            }" />
         </template>
       </CWidgetStatsA>
     </CCol>

@@ -3,6 +3,7 @@ using Dapper;
 using static Dapper.SqlMapper;
 
 namespace CleanArchitecture.Application.Common.Interfaces;
+
 public interface IDapperService : IDisposable
 {
     DynamicParameters CreateDynamicParameters<T>(T data) where T : class;

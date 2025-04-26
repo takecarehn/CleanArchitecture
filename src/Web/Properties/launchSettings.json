@@ -19,15 +19,15 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-      "IIS Express": {
-        "commandName": "IISExpress",
-        "launchBrowser": true,
-        "environmentVariables": {
-          //#if(!UseApiOnly)
-          "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
-          //#endif
-          "ASPNETCORE_ENVIRONMENT": "Development"
-        }
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        //#if(!UseApiOnly)
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
+        //#endif
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
+  }
 }

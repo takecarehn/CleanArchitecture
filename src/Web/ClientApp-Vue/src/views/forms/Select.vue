@@ -29,21 +29,17 @@
             similarly sized text inputs.
           </p>
           <DocsExample href="forms/select.html#sizing">
-            <CFormSelect
-              size="lg"
-              class="mb-3"
-              aria-label="Large select example"
-            >
+            <CFormSelect size="lg"
+                         class="mb-3"
+                         aria-label="Large select example">
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
             </CFormSelect>
-            <CFormSelect
-              size="sm"
-              class="mb-3"
-              aria-label="Small select example"
-            >
+            <CFormSelect size="sm"
+                         class="mb-3"
+                         aria-label="Small select example">
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -54,11 +50,9 @@
             The <code>multiple</code> attribute is also supported:
           </p>
           <DocsExample href="forms/select.html#sizing">
-            <CFormSelect
-              size="lg"
-              multiple
-              aria-label="Multiple select example"
-            >
+            <CFormSelect size="lg"
+                         multiple
+                         aria-label="Multiple select example">
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>
@@ -69,11 +63,9 @@
             As is the <code>html-size</code> property:
           </p>
           <DocsExample href="forms/select.html#sizing">
-            <CFormSelect
-              size="lg"
-              multiple
-              aria-label="Multiple select example"
-            >
+            <CFormSelect size="lg"
+                         multiple
+                         aria-label="Multiple select example">
               <option>Open this select menu</option>
               <option value="1">One</option>
               <option value="2">Two</option>

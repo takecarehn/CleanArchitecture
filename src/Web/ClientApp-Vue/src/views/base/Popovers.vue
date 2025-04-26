@@ -8,16 +8,14 @@
         </CCardHeader>
         <CCardBody>
           <DocsExample href="components/popover.html#example">
-            <CButton
-              v-c-popover="{
+            <CButton v-c-popover="{
                 header: 'Popover title',
                 content:
                   'And here\’s some amazing content. It’s very engaging. Right?',
                 placement: 'right',
               }"
-              color="danger"
-              size="lg"
-            >
+                     color="danger"
+                     size="lg">
               Click to toggle popover
             </CButton>
           </DocsExample>
@@ -35,42 +33,30 @@
             Directions are mirrored when using CoreUI for Vue in RTL.
           </p>
           <DocsExample href="components/popover.html#four-directions">
-            <CButton
-              v-c-popover="{
+            <CButton v-c-popover="{
                 content:
                   'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.',
                 placement: 'top',
               }"
-              color="secondary"
-              >Popover on top</CButton
-            >
-            <CButton
-              v-c-popover="{
+                     color="secondary">Popover on top</CButton>
+            <CButton v-c-popover="{
                 content:
                   'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.',
                 placement: 'right',
               }"
-              color="secondary"
-              >Popover on right</CButton
-            >
-            <CButton
-              v-c-popover="{
+                     color="secondary">Popover on right</CButton>
+            <CButton v-c-popover="{
                 content:
                   'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.',
                 placement: 'bottom',
               }"
-              color="secondary"
-              >Popover on bottom</CButton
-            >
-            <CButton
-              v-c-popover="{
+                     color="secondary">Popover on bottom</CButton>
+            <CButton v-c-popover="{
                 content:
                   'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.',
                 placement: 'left',
               }"
-              color="secondary"
-              >Popover on left</CButton
-            >
+                     color="secondary">Popover on left</CButton>
           </DocsExample>
         </CCardBody>
       </CCard>

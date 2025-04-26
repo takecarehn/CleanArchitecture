@@ -140,22 +140,20 @@
             Add <code>layout=&#34;horizontal&#34;</code> to change the layout of
             list group items from vertical to horizontal across all breakpoints.
             Alternatively, choose a responsive variant
-            <code
-              >.layout=&#34;horizontal-&#123;sm | md | lg | xl |
-              xxl&#125;&#34;</code
-            >
+            <code>
+              .layout=&#34;horizontal-&#123;sm | md | lg | xl |
+              xxl&#125;&#34;
+            </code>
             to make a list group horizontal starting at that breakpoint&#39;s
             <code>min-width</code>. Currently
-            <strong
-              >horizontal list groups cannot be combined with flush list
-              groups.</strong
-            >
+            <strong>
+              horizontal list groups cannot be combined with flush list
+              groups.
+            </strong>
           </p>
           <DocsExample href="components/list-group.html#flush">
-            <template
-              v-for="item in ['', '-sm', '-md', '-lg', '-xl', '-xxl']"
-              :key="item"
-            >
+            <template v-for="item in ['', '-sm', '-md', '-lg', '-xl', '-xxl']"
+                      :key="item">
               <CListGroup class="mb-2" :layout="'horizontal' + item">
                 <CListGroupItem>Cras justo odio</CListGroupItem>
                 <CListGroupItem>Dapibus ac facilisis in</CListGroupItem>
@@ -179,8 +177,7 @@
           <DocsExample href="components/list-group.html#contextual-classes">
             <CListGroup>
               <CListGroupItem>Dapibus ac facilisis in</CListGroupItem>
-              <CListGroupItem
-                v-for="item in [
+              <CListGroupItem v-for="item in [
                   'primary',
                   'secondary',
                   'success',
@@ -190,10 +187,8 @@
                   'light',
                   'dark',
                 ]"
-                :key="item"
-                :color="item"
-                >A simple {{ item }} list group item</CListGroupItem
-              >
+                              :key="item"
+                              :color="item">A simple {{ item }} list group item</CListGroupItem>
             </CListGroup>
           </DocsExample>
           <p class="text-body-secondary small">
@@ -205,11 +200,8 @@
           </p>
           <DocsExample href="components/list-group.html#contextual-classes">
             <CListGroup>
-              <CListGroupItem as="a" href="#"
-                >Dapibus ac facilisis in</CListGroupItem
-              >
-              <CListGroupItem
-                v-for="item in [
+              <CListGroupItem as="a" href="#">Dapibus ac facilisis in</CListGroupItem>
+              <CListGroupItem v-for="item in [
                   'primary',
                   'secondary',
                   'success',
@@ -219,12 +211,10 @@
                   'light',
                   'dark',
                 ]"
-                :key="item"
-                as="a"
-                href="#"
-                :color="item"
-                >A simple {{ item }} list group item</CListGroupItem
-              >
+                              :key="item"
+                              as="a"
+                              href="#"
+                              :color="item">A simple {{ item }} list group item</CListGroupItem>
             </CListGroup>
           </DocsExample>
         </CCardBody>
@@ -242,21 +232,15 @@
           </p>
           <DocsExample href="components/list-group.html#with-badges">
             <CListGroup>
-              <CListGroupItem
-                class="d-flex justify-content-between align-items-center"
-              >
+              <CListGroupItem class="d-flex justify-content-between align-items-center">
                 Cras justo odio
                 <CBadge color="primary" shape="rounded-pill"> 14 </CBadge>
               </CListGroupItem>
-              <CListGroupItem
-                class="d-flex justify-content-between align-items-center"
-              >
+              <CListGroupItem class="d-flex justify-content-between align-items-center">
                 Dapibus ac facilisis in
                 <CBadge color="primary" shape="rounded-pill"> 2 </CBadge>
               </CListGroupItem>
-              <CListGroupItem
-                class="d-flex justify-content-between align-items-center"
-              >
+              <CListGroupItem class="d-flex justify-content-between align-items-center">
                 Morbi leo risus
                 <CBadge color="primary" shape="rounded-pill"> 1 </CBadge>
               </CListGroupItem>
@@ -274,9 +258,7 @@
           <p class="text-body-secondary small">
             Add nearly any HTML within, even for linked list groups like the one
             below, with the help of
-            <a href="https://coreui.io/docs/utilities/flex/"
-              >flexbox utilities</a
-            >.
+            <a href="https://coreui.io/docs/utilities/flex/">flexbox utilities</a>.
           </p>
           <DocsExample href="components/list-group.html#custom-content">
             <CListGroup>
@@ -300,9 +282,7 @@
                   Donec id elit non mi porta gravida at eget metus. Maecenas sed
                   diam eget risus varius blandit.
                 </p>
-                <small class="text-body-secondary"
-                  >Donec id elit non mi porta.</small
-                >
+                <small class="text-body-secondary">Donec id elit non mi porta.</small>
               </CListGroupItem>
               <CListGroupItem as="a" href="#">
                 <div class="d-flex w-100 justify-content-between">
@@ -313,9 +293,7 @@
                   Donec id elit non mi porta gravida at eget metus. Maecenas sed
                   diam eget risus varius blandit.
                 </p>
-                <small class="text-body-secondary"
-                  >Donec id elit non mi porta.</small
-                >
+                <small class="text-body-secondary">Donec id elit non mi porta.</small>
               </CListGroupItem>
             </CListGroup>
           </DocsExample>

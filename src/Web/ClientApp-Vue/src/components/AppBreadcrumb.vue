@@ -1,5 +1,4 @@
-<script setup>
-import { onMounted, ref } from 'vue'
+<script setup>import { onMounted, ref } from 'vue'
 import router from '@/router'
 
 const breadcrumbs = ref()
@@ -20,17 +19,14 @@ router.afterEach(() => {
 
 onMounted(() => {
   breadcrumbs.value = getBreadcrumbs()
-})
-</script>
+})</script>
 
 <template>
   <CBreadcrumb class="my-0">
-    <CBreadcrumbItem
-      v-for="item in breadcrumbs"
-      :key="item"
-      :href="item.active ? '' : item.path"
-      :active="item.active"
-    >
+    <CBreadcrumbItem v-for="item in breadcrumbs"
+                     :key="item"
+                     :href="item.active ? '' : item.path"
+                     :active="item.active">
       {{ item.name }}
     </CBreadcrumbItem>
   </CBreadcrumb>

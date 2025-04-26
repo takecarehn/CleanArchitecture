@@ -2,9 +2,10 @@
 using Microsoft.Extensions.Options;
 
 namespace CleanArchitecture.Infrastructure.Authorization;
+
 public class PermissionPolicyProvider : IAuthorizationPolicyProvider
 {
-    const string POLICY_PREFIX = "Permission.";
+    private const string POLICY_PREFIX = "Permission.";
     private readonly DefaultAuthorizationPolicyProvider _fallbackPolicyProvider;
 
     public PermissionPolicyProvider(IOptions<AuthorizationOptions> options)
