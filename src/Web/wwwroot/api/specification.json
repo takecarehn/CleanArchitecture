@@ -8,6 +8,9 @@
   "paths": {
     "/api/auth/login": {
       "post": {
+        "tags": [
+          "Auth"
+        ],
         "operationId": "PostApiAuthLogin",
         "requestBody": {
           "x-name": "request",
@@ -37,6 +40,9 @@
     },
     "/api/auth/logout": {
       "post": {
+        "tags": [
+          "Auth"
+        ],
         "operationId": "PostApiAuthLogout",
         "responses": {
           "200": {
@@ -54,6 +60,9 @@
     },
     "/api/auth/change-password": {
       "post": {
+        "tags": [
+          "Auth"
+        ],
         "operationId": "PostApiAuthChangePassword",
         "requestBody": {
           "x-name": "request",
@@ -83,6 +92,9 @@
     },
     "/api/auth/reset-password": {
       "post": {
+        "tags": [
+          "Auth"
+        ],
         "operationId": "PostApiAuthResetPassword",
         "requestBody": {
           "x-name": "request",
@@ -112,7 +124,154 @@
     },
     "/api/common/upload": {
       "post": {
+        "tags": [
+          "Commons"
+        ],
         "operationId": "PostApiCommonUpload",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/roles": {
+      "post": {
+        "tags": [
+          "Roles"
+        ],
+        "operationId": "PostApiRoles",
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrUpdateRoleRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Roles"
+        ],
+        "operationId": "GetApiRoles",
+        "parameters": [
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            },
+            "x-position": 1
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/roles/{roleId}": {
+      "put": {
+        "tags": [
+          "Roles"
+        ],
+        "operationId": "PutApiRoles",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrUpdateRoleRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Roles"
+        ],
+        "operationId": "DeleteApiRoles",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "",
@@ -129,6 +288,9 @@
     },
     "/api/claims/roles/{roleId}/add": {
       "post": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "PostApiClaimsRolesAdd",
         "parameters": [
           {
@@ -169,6 +331,9 @@
     },
     "/api/claims/users/{userId}/add": {
       "post": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "PostApiClaimsUsersAdd",
         "parameters": [
           {
@@ -209,6 +374,9 @@
     },
     "/api/claims/users/{userId}/all": {
       "get": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "GetApiClaimsUsersAll",
         "parameters": [
           {
@@ -237,6 +405,9 @@
     },
     "/api/claims/roles/{roleId}/update": {
       "put": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "PutApiClaimsRolesUpdate",
         "parameters": [
           {
@@ -277,6 +448,9 @@
     },
     "/api/claims/users/{userId}/update": {
       "put": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "PutApiClaimsUsersUpdate",
         "parameters": [
           {
@@ -317,6 +491,9 @@
     },
     "/api/claims/all": {
       "get": {
+        "tags": [
+          "Claims"
+        ],
         "operationId": "GetApiClaimsAll",
         "responses": {
           "200": {
@@ -334,6 +511,9 @@
     },
     "/api/users/{userId}/user-name": {
       "get": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "GetApiUsersUserName",
         "parameters": [
           {
@@ -362,6 +542,9 @@
     },
     "/api/users/create": {
       "post": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "PostApiUsersCreate",
         "requestBody": {
           "x-name": "request",
@@ -391,6 +574,9 @@
     },
     "/api/users/{userId}/role/{role}": {
       "get": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "GetApiUsersRole",
         "parameters": [
           {
@@ -428,6 +614,9 @@
     },
     "/api/users/{userId}/authorize/{policyName}": {
       "post": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "PostApiUsersAuthorize",
         "parameters": [
           {
@@ -465,6 +654,9 @@
     },
     "/api/users/{userId}": {
       "delete": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "DeleteApiUsers",
         "parameters": [
           {
@@ -493,6 +685,9 @@
     },
     "/api/users/{userId}/lock": {
       "post": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "PostApiUsersLock",
         "parameters": [
           {
@@ -521,6 +716,9 @@
     },
     "/api/users/{userId}/unlock": {
       "post": {
+        "tags": [
+          "Users"
+        ],
         "operationId": "PostApiUsersUnlock",
         "parameters": [
           {
@@ -926,6 +1124,15 @@
             "type": "string"
           },
           "newPassword": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateOrUpdateRoleRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
             "type": "string"
           }
         }

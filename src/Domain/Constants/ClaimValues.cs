@@ -25,5 +25,10 @@ public abstract class ClaimValues
     public const string PermissionUserViewClaims = "Permission.UserClaim.ViewClaims";
     public const string PermissionUserUpdateClaims = "Permission.UserClaim.UpdateClaims";
 
+    public const string PermissionRoleAdd = "Permission.Role.Add";
+    public const string PermissionRoleUpdate = "Permission.Role.Update";
+    public const string PermissionRoleDelete = "Permission.Role.Delete";
+    public const string PermissionRoleAll = "Permission.Role.GetAll";
+
     public const string PermissionUpload = "Permission.RoleClaim.Upload";
 }

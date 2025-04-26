@@ -15,31 +15,17 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angula
 
 export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 
-export interface IClient {
+export interface IAuthClient {
     postApiAuthLogin(request: LoginRequest): Observable<Result>;
     postApiAuthLogout(): Observable<Result>;
     postApiAuthChangePassword(request: ChangePasswordRequest): Observable<Result>;
     postApiAuthResetPassword(request: ResetPasswordRequest): Observable<Result>;
-    postApiCommonUpload(): Observable<Result>;
-    postApiClaimsRolesAdd(roleId: string, request: ClaimsRequest): Observable<Result>;
-    postApiClaimsUsersAdd(userId: string, request: ClaimsRequest): Observable<Result>;
-    getApiClaimsUsersAll(userId: string): Observable<Result>;
-    putApiClaimsRolesUpdate(roleId: string, request: ClaimsRequest): Observable<Result>;
-    putApiClaimsUsersUpdate(userId: string, request: ClaimsRequest): Observable<Result>;
-    getApiClaimsAll(): Observable<Result>;
-    getApiUsersUserName(userId: string): Observable<Result>;
-    postApiUsersCreate(request: CreateUserRequest): Observable<Result>;
-    getApiUsersRole(userId: string, role: string): Observable<Result>;
-    postApiUsersAuthorize(userId: string, policyName: string): Observable<Result>;
-    deleteApiUsers(userId: string): Observable<Result>;
-    postApiUsersLock(userId: string): Observable<Result>;
-    postApiUsersUnlock(userId: string): Observable<Result>;
 }
 
 @Injectable({
     providedIn: 'root'
 })
-export class Client implements IClient {
+export class AuthClient implements IAuthClient {
     private http: HttpClient;
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -252,6 +238,24 @@ export class Client implements IClient {
         }
         return _observableOf(null as any);
     }
+}
+
+export interface ICommonsClient {
+    postApiCommonUpload(): Observable<Result>;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class CommonsClient implements ICommonsClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ?? "";
+    }
 
     postApiCommonUpload(): Observable<Result> {
         let url_ = this.baseUrl + "/api/common/upload";
@@ -299,6 +303,264 @@ export class Client implements IClient {
             }));
         }
         return _observableOf(null as any);
+    }
+}
+
+export interface IRolesClient {
+    postApiRoles(request: CreateOrUpdateRoleRequest): Observable<Result>;
+    getApiRoles(pageNumber: number | undefined, pageSize: number | undefined): Observable<Result>;
+    putApiRoles(roleId: string, request: CreateOrUpdateRoleRequest): Observable<Result>;
+    deleteApiRoles(roleId: string): Observable<Result>;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class RolesClient implements IRolesClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ?? "";
+    }
+
+    postApiRoles(request: CreateOrUpdateRoleRequest): Observable<Result> {
+        let url_ = this.baseUrl + "/api/roles";
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(request);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("post", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processPostApiRoles(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processPostApiRoles(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<Result>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<Result>;
+        }));
+    }
+
+    protected processPostApiRoles(response: HttpResponseBase): Observable<Result> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Result.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    getApiRoles(pageNumber: number | undefined, pageSize: number | undefined): Observable<Result> {
+        let url_ = this.baseUrl + "/api/roles?";
+        if (pageNumber === null)
+            throw new Error("The parameter 'pageNumber' cannot be null.");
+        else if (pageNumber !== undefined)
+            url_ += "pageNumber=" + encodeURIComponent("" + pageNumber) + "&";
+        if (pageSize === null)
+            throw new Error("The parameter 'pageSize' cannot be null.");
+        else if (pageSize !== undefined)
+            url_ += "pageSize=" + encodeURIComponent("" + pageSize) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processGetApiRoles(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGetApiRoles(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<Result>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<Result>;
+        }));
+    }
+
+    protected processGetApiRoles(response: HttpResponseBase): Observable<Result> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Result.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    putApiRoles(roleId: string, request: CreateOrUpdateRoleRequest): Observable<Result> {
+        let url_ = this.baseUrl + "/api/roles/{roleId}";
+        if (roleId === undefined || roleId === null)
+            throw new Error("The parameter 'roleId' must be defined.");
+        url_ = url_.replace("{roleId}", encodeURIComponent("" + roleId));
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(request);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("put", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processPutApiRoles(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processPutApiRoles(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<Result>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<Result>;
+        }));
+    }
+
+    protected processPutApiRoles(response: HttpResponseBase): Observable<Result> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Result.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+
+    deleteApiRoles(roleId: string): Observable<Result> {
+        let url_ = this.baseUrl + "/api/roles/{roleId}";
+        if (roleId === undefined || roleId === null)
+            throw new Error("The parameter 'roleId' must be defined.");
+        url_ = url_.replace("{roleId}", encodeURIComponent("" + roleId));
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "application/json"
+            })
+        };
+
+        return this.http.request("delete", url_, options_).pipe(_observableMergeMap((response_ : any) => {
+            return this.processDeleteApiRoles(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processDeleteApiRoles(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<Result>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<Result>;
+        }));
+    }
+
+    protected processDeleteApiRoles(response: HttpResponseBase): Observable<Result> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            let result200: any = null;
+            let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+            result200 = Result.fromJS(resultData200);
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf(null as any);
+    }
+}
+
+export interface IClaimsClient {
+    postApiClaimsRolesAdd(roleId: string, request: ClaimsRequest): Observable<Result>;
+    postApiClaimsUsersAdd(userId: string, request: ClaimsRequest): Observable<Result>;
+    getApiClaimsUsersAll(userId: string): Observable<Result>;
+    putApiClaimsRolesUpdate(roleId: string, request: ClaimsRequest): Observable<Result>;
+    putApiClaimsUsersUpdate(userId: string, request: ClaimsRequest): Observable<Result>;
+    getApiClaimsAll(): Observable<Result>;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class ClaimsClient implements IClaimsClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ?? "";
     }
 
     postApiClaimsRolesAdd(roleId: string, request: ClaimsRequest): Observable<Result> {
@@ -618,6 +880,30 @@ export class Client implements IClient {
             }));
         }
         return _observableOf(null as any);
+    }
+}
+
+export interface IUsersClient {
+    getApiUsersUserName(userId: string): Observable<Result>;
+    postApiUsersCreate(request: CreateUserRequest): Observable<Result>;
+    getApiUsersRole(userId: string, role: string): Observable<Result>;
+    postApiUsersAuthorize(userId: string, policyName: string): Observable<Result>;
+    deleteApiUsers(userId: string): Observable<Result>;
+    postApiUsersLock(userId: string): Observable<Result>;
+    postApiUsersUnlock(userId: string): Observable<Result>;
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class UsersClient implements IUsersClient {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        this.http = http;
+        this.baseUrl = baseUrl ?? "";
     }
 
     getApiUsersUserName(userId: string): Observable<Result> {
@@ -1748,6 +2034,42 @@ export class ResetPasswordRequest implements IResetPasswordRequest {
 export interface IResetPasswordRequest {
     userId?: string;
     newPassword?: string;
+}
+
+export class CreateOrUpdateRoleRequest implements ICreateOrUpdateRoleRequest {
+    name?: string;
+
+    constructor(data?: ICreateOrUpdateRoleRequest) {
+        if (data) {
+            for (var property in data) {
+                if (data.hasOwnProperty(property))
+                    (<any>this)[property] = (<any>data)[property];
+            }
+        }
+    }
+
+    init(_data?: any) {
+        if (_data) {
+            this.name = _data["name"];
+        }
+    }
+
+    static fromJS(data: any): CreateOrUpdateRoleRequest {
+        data = typeof data === 'object' ? data : {};
+        let result = new CreateOrUpdateRoleRequest();
+        result.init(data);
+        return result;
+    }
+
+    toJSON(data?: any) {
+        data = typeof data === 'object' ? data : {};
+        data["name"] = this.name;
+        return data;
+    }
+}
+
+export interface ICreateOrUpdateRoleRequest {
+    name?: string;
 }
 
 export class ClaimsRequest implements IClaimsRequest {

@@ -16,7 +16,7 @@ public class Auth : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
-        var group = app.MapGroup("/api/auth");
+        var group = app.MapGroup("/api/auth").WithTags("Auth"); ;
 
         group.MapPost("/login", LoginAsync);
         group.MapPost("/logout", LogoutAsync);

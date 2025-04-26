@@ -15,7 +15,7 @@ public class UserPermissions : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
-        var group = app.MapGroup("/api/claims");
+        var group = app.MapGroup("/api/claims").WithTags("Claims"); ;
 
         group.MapPost("/roles/{roleId}/add", AddClaimsToRoleAsync)
              .RequirePermission(ClaimValues.PermissionRoleAddClaims);

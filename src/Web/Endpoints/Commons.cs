@@ -9,7 +9,7 @@ public class Commons : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
-        var group = app.MapGroup("/api/common");
+        var group = app.MapGroup("/api/common").WithTags("Commons"); ;
 
         group.MapPost("/upload", UploadFilesAsync)
              .RequirePermission(ClaimValues.PermissionUpload);

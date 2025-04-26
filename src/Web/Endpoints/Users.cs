@@ -12,7 +12,7 @@ public class Users : EndpointGroupBase
 {
     public override void Map(WebApplication app)
     {
-        var group = app.MapGroup("/api/users");
+        var group = app.MapGroup("/api/users").WithTags("Users"); ;
         group.MapGet("/{userId:guid}/user-name", GetUserNameAsync)
              .RequirePermission(ClaimValues.PermissionUserGetUserName);
         group.MapPost("/create", CreateUserAsync)
