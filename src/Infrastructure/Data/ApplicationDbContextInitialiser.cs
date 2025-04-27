@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Security.Claims;
 
 namespace CleanArchitecture.Infrastructure.Data;
 
@@ -94,23 +95,40 @@ public class ApplicationDbContextInitialiser
             }
         }
 
-        // Default data
-        // Seed, if necessary
-        if (!_context.TodoLists.Any())
-        {
-            _context.TodoLists.Add(new TodoList
-            {
-                Title = "Todo List",
-                Items =
-                {
-                    new TodoItem { Title = "Make a todo list 📃" },
-                    new TodoItem { Title = "Check off the first item ✅" },
-                    new TodoItem { Title = "Realise you've already done two things on the list! 🤯"},
-                    new TodoItem { Title = "Reward yourself with a nice, long nap 🏆" },
-                }
-            });
+        var existingClaims = await _roleManager.GetClaimsAsync(administratorRole);
 
-            await _context.SaveChangesAsync();
+        var claimsToAdd = new List<Claim>
+        {
+            new("Permission.Role", "Permission.Role.Add"),
+            new("Permission.Role", "Permission.Role.Update"),
+            new("Permission.RoleClaim", "Permission.RoleClaim.UpdateClaims"),
+            new("Permission.RoleClaim", "Permission.RoleClaim.AddClaims"),
+            new("Permission.RoleClaim", "Permission.User.Add"),
+            new("Permission.RoleClaim", "Permission.User.Update"),
+            new("Permission.RoleClaim", "Permission.User.Delete"),
+            new("Permission.RoleClaim", "Permission.User.GetUserName"),
+            new("Permission.RoleClaim", "Permission.User.Lock"),
+            new("Permission.RoleClaim", "Permission.User.Unlock"),
+            new("Permission.RoleClaim", "Permission.User.ChangePass"),
+            new("Permission.RoleClaim", "Permission.User.ResetPass"),
+            new("Permission.RoleClaim", "Permission.UserClaim.AddClaims"),
+            new("Permission.RoleClaim", "Permission.UserClaim.ViewClaims"),
+            new("Permission.RoleClaim", "Permission.RoleClaim.UpdateClaims"),
+            new("Permission.RoleClaim", "Permission.UserClaim.UpdateClaims"),
+            new("Permission.RoleClaim", "Permission.RoleClaim.AllClaims"),
+            new("Permission.RoleClaim", "Permission.RoleClaim.Upload"),
+            new("Permission.RoleClaim", "Permission.Role.Add"),
+            new("Permission.RoleClaim", "Permission.Role.Update"),
+            new("Permission.RoleClaim", "Permission.Role.Delete"),
+            new("Permission.RoleClaim", "Permission.Role.GetAll")
+        };
+
+        foreach (var claim in claimsToAdd)
+        {
+            if (!existingClaims.Any(c => c.Type == claim.Type && c.Value == claim.Value))
+            {
+                await _roleManager.AddClaimAsync(administratorRole, claim);
+            }
         }
     }
 }
